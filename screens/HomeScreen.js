@@ -33,21 +33,21 @@ export default function HomeScreen({navigation}) {
 
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => Alert.alert('Ventilation Button pressed')}
+            onPress={() => navigation.navigate('Ventilation')}
           >
             <Text style={styles.buttonText}>Ventilation</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => Alert.alert('PPE Usage Button pressed')}
+            onPress={() => navigation.navigate('PPE')}
           >
             <Text style={styles.buttonText}>PPE Usage</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => Alert.alert('Resources pressed')}
+            onPress={() => navigation.navigate('Resources')}
           >
             <Text style={styles.buttonText}>Resources</Text>
           </TouchableOpacity>  

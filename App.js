@@ -10,6 +10,9 @@ import useLinking from './navigation/useLinking';
 
 import HomeScreen from './screens/HomeScreen';
 import ClinicianScreen from './screens/ClinicianScreen';
+import VentilationScreen from './screens/VentilationScreen';
+import PPEScreen from './screens/PPEScreen';
+import ResourcesScreen from './screens/ResourcesScreen';
 
 const Stack = createStackNavigator(); 
 

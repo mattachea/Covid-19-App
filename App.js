@@ -7,7 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import BottomTabNavigator from './navigation/BottomTabNavigator';
-// import Clinician from './screens/Clinician';
+import Clinician from './screens/Clinician';
 import useLinking from './navigation/useLinking';
 
 const Stack = createStackNavigator();
@@ -53,7 +53,7 @@ export default function App(props) {
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
           <Stack.Navigator>
             <Stack.Screen name="Root" component={BottomTabNavigator} />
-            {/* <Stack.Screen name="Clinician" component={Clinician} /> */}
+            <Stack.Screen name="Clinician" component={Clinician} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>

@@ -61,17 +61,18 @@ export default function App(props) {
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
           <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Root" component={BottomTabNavigator} />
+            {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
 
-            <Stack.Screen name="Clinician Pocket Reference" component={ClinicianScreen} />
-            <Stack.Screen name="Epidemiology" component={EpidemiologyScreen} />
-            <Stack.Screen name="Recognition" component={RecognitionScreen} />
-            <Stack.Screen name="Treatment" component={TreatmentScreen} />
+            <Stack.Screen name="Clinician Pocket Reference" component={ClinicianScreen} options={{ title: null }}/>
+            <Stack.Screen name="Epidemiology" component={EpidemiologyScreen} options={{ title: null }} />
+            <Stack.Screen name="Recognition" component={RecognitionScreen} options={{ title: null }}/>
+            <Stack.Screen name="Treatment" component={TreatmentScreen} options={{ title: null }}/>
 
-            <Stack.Screen name="Ventilation" component={VentilationScreen} />
-            <Stack.Screen name="PPE" component={PPEScreen} />
-            <Stack.Screen name="Resources" component={ResourcesScreen} />
-            {/* <Stack.Screen name="Root" component={BottomTabNavigator} /> */}
+            <Stack.Screen name="Ventilation" component={VentilationScreen} options={{ title: null }}/>
+            <Stack.Screen name="PPE" component={PPEScreen} options={{ title: null }}/>
+            <Stack.Screen name="Resources" component={ResourcesScreen} options={{ title: null }}/>
+            
           </Stack.Navigator>
         </NavigationContainer>
       </View>

@@ -3,17 +3,19 @@ import * as React from 'react';
 import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
+
 
 export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
+        <View style={styles.titleContainer}>
           <Image
-            source={require('../assets/images/hopkinsLogo.png')}
-            style={styles.welcomeImage}
+            source={require('../assets/images/splash.png')}
+            style={styles.titleImage}
           />
-          <Text style={styles.welcomeText}>
+          <Text style={styles.titleText}>
             Covid-19 {"\n"} Critical Care Reference
           </Text>
 
@@ -22,17 +24,22 @@ export default function HomeScreen({navigation}) {
             style={styles.buttonStyle}
             onPress={() => navigation.navigate('Clinician Pocket Reference')}
           >
-            {/* <Image 
+            <Image 
               source={require('../assets/images/clinician.png')}
               style={styles.buttonIcon}
-              /> */}
-            <Text style={styles.buttonText}>Clinician Pocket Reference</Text>
+              />
+            <Text style={styles.buttonText}>Clinician Reference</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.buttonStyle}
             onPress={() => navigation.navigate('Ventilation')}
           >
+            <Ionicons
+              name={"md-radio"}
+              size={30}
+              style={{marginLeft: 0}}
+            />
             <Text style={styles.buttonText}>Ventilation</Text>
           </TouchableOpacity>
 
@@ -40,6 +47,10 @@ export default function HomeScreen({navigation}) {
             style={styles.buttonStyle}
             onPress={() => navigation.navigate('PPE')}
           >
+            <Image 
+              source={require('../assets/images/PPE.png')}
+              style={styles.buttonIcon}
+              />
             <Text style={styles.buttonText}>PPE Usage</Text>
           </TouchableOpacity>
 
@@ -47,6 +58,11 @@ export default function HomeScreen({navigation}) {
             style={styles.buttonStyle}
             onPress={() => navigation.navigate('Resources')}
           >
+            <Ionicons
+              name={"md-information-circle-outline"}
+              size={30}
+              style={{marginLeft: 0}}
+            />
             <Text style={styles.buttonText}>Resources</Text>
           </TouchableOpacity>  
 
@@ -62,7 +78,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  welcomeText: {
+  titleText: {
     marginTop: 30,
     marginBottom: 30,
     fontSize: 36,
@@ -71,8 +87,9 @@ const styles = StyleSheet.create({
   buttonContainer: {
   },
   buttonIcon:{
-    width:20,
-    height:20,
+    width:30,
+    height:30,
+    resizeMode: 'contain',
   },
   buttonStyle: {
     flexDirection: 'row',
@@ -80,7 +97,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     width:300,
-    height:50,
+    height:70,
     backgroundColor: '#f2f2f2',
     borderRadius:20,
     shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -91,16 +108,17 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
+    marginLeft: 20
   },
   contentContainer: {
     paddingTop: 0,
   },
-  welcomeContainer: {
+  titleContainer: {
     alignItems: 'center',
     marginTop: 10,
     marginBottom: 20,
   },
-  welcomeImage: {
+  titleImage: {
     width: 200,
     height: 200,
     resizeMode: 'contain',

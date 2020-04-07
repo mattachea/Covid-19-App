@@ -3,10 +3,10 @@ import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-export default function Clinician({ navigation}) {
-    return (
-        <View>
-            <Text>Hello World</Text>
-        </View>
-    );
+export default function ClinicianScreen({navigation}) {
+  return (
+    <View>
+        <Text>Hello world</Text>
+    </View>
+  );
 }

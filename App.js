@@ -9,7 +9,12 @@ import BottomTabNavigator from './navigation/BottomTabNavigator';
 import useLinking from './navigation/useLinking';
 
 import HomeScreen from './screens/HomeScreen';
+
 import ClinicianScreen from './screens/ClinicianScreen';
+import EpidemiologyScreen from './screens/EpidemiologyScreen';
+import RecognitionScreen from './screens/RecognitionScreen';
+import TreatmentScreen from './screens/TreatmentScreen';
+
 import VentilationScreen from './screens/VentilationScreen';
 import PPEScreen from './screens/PPEScreen';
 import ResourcesScreen from './screens/ResourcesScreen';
@@ -55,13 +60,18 @@ export default function App(props) {
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
-          <Stack.Navigator initialRouteName="Home">
+          <Stack.Navigator>
             <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
-            <Stack.Screen name="Clinician" component={ClinicianScreen} />
+
+            <Stack.Screen name="Clinician Pocket Reference" component={ClinicianScreen} />
+            <Stack.Screen name="Epidemiology" component={EpidemiologyScreen} />
+            <Stack.Screen name="Recognition" component={RecognitionScreen} />
+            <Stack.Screen name="Treatment" component={TreatmentScreen} />
+
             <Stack.Screen name="Ventilation" component={VentilationScreen} />
             <Stack.Screen name="PPE" component={PPEScreen} />
             <Stack.Screen name="Resources" component={ResourcesScreen} />
+            {/* <Stack.Screen name="Root" component={BottomTabNavigator} /> */}
           </Stack.Navigator>
         </NavigationContainer>
       </View>

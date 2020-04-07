@@ -4,8 +4,6 @@ import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import { MonoText } from '../components/StyledText';
-
 export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
@@ -22,12 +20,12 @@ export default function HomeScreen({navigation}) {
           <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => navigation.navigate('Clinician')}
+            onPress={() => navigation.navigate('Clinician Pocket Reference')}
           >
-            <Image 
+            {/* <Image 
               source={require('../assets/images/clinician.png')}
               style={styles.buttonIcon}
-              />
+              /> */}
             <Text style={styles.buttonText}>Clinician Pocket Reference</Text>
           </TouchableOpacity>
 

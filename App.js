@@ -59,6 +59,9 @@ export default function App(props) {
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Root" component={BottomTabNavigator} />
             <Stack.Screen name="Clinician" component={ClinicianScreen} />
+            <Stack.Screen name="Ventilation" component={VentilationScreen} />
+            <Stack.Screen name="PPE" component={PPEScreen} />
+            <Stack.Screen name="Resources" component={ResourcesScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>

@@ -31,17 +31,6 @@ export default class EpidemiologyScreen extends Component {
      }
   }
 
-  // render() {
-  //   return (
-  //     <View style={styles.container}>
-  //       {this.state.information.map((item, key) => {
-          
-  //       }
-  //     )}
-  //     </View>
-  //   );
-  // }
-
   render() {
     return (
       <View style={styles.container}>
@@ -56,22 +45,22 @@ export default class EpidemiologyScreen extends Component {
             Epidemiology
             </Text>
           </View>
-         {/* {this.state.information.map((prop, key) => {
-           return (
-             <Accordion title="hello" data="bitch please" key={key}>{prop[1]}></Accordion>
-           );
-        })} "Virus called SARS-CoV-2 and is an enveloped RNA
-coronavirus. Similarity to SARS-CoV-1 from 2003 "*/}
-        <Accordion title="Disease Agent" data= {getCPRtext("Epidemeology", "Disease%20Agent")} ></Accordion>
-        <Accordion title="Transmission" data={getCPRtext("Epidemeology", "Transmission")} ></Accordion>
+
+        <Accordion title="Disease Agent" data="Virus called SARS-CoV-2 and is an enveloped RNA
+coronavirus. Similarity to SARS-CoV-1 from 2003" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Transmission" data="Initially wildlife (bats and pangolins) → human. Now
+human→ human. Infectious secretions: resp droplets,
+sputum, blood, serum.[1] Attaches to Angiotensin
+Converting Enzyme-2 (ACE-2) receptor of type II
+pneumocytes" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
         <Accordion title="R0" data="= number of new cases from a single infection
-= 2.24-3.58 [2]" ></Accordion>
+= 2.24-3.58 [2]" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
         <Accordion title="Case Fatality" data="Overall CF ratio (death/confirmed infections) = 4.5%
 (current number) [3]
 CF rate of >80 age group = 14.8%[4]
-Case fatality ratio of “critically ill” 49%[4]" ></Accordion>
+Case fatality ratio of “critically ill” 49%[4]" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
         <Accordion title="Risk Factors for Severity" data="Old age, Coronary Artery Disease, Hypertension,
-Diabetes, Chronic Respiratory Disease [4,5]" ></Accordion>
+Diabetes, Chronic Respiratory Disease [4,5]" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
         </ScrollView>
        </View>
     )

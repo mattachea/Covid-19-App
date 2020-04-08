@@ -17,14 +17,14 @@ export default class Accordion extends Component{
 
     return (
        <View>
-            <TouchableOpacity style={styles.row} onPress={()=>this.toggleExpand()}>
+            <TouchableOpacity style={[styles.row, {backgroundColor: this.props.colorRow}]} onPress={()=>this.toggleExpand()}>
                 <Text style={[styles.title, styles.font]}>{this.props.title}</Text>
                 <Icon name={this.state.expanded ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} color={'#c74848'} />
             </TouchableOpacity>
             <View style={styles.parentHr}/>
             {
                 this.state.expanded &&
-                <View style={styles.child}>
+                <View style={[styles.child, {backgroundColor: this.props.colorChild}]}>
                     <Text>{this.props.data}</Text>    
                 </View>
             }

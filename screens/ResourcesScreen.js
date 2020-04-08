@@ -1,12 +1,93 @@
+import { Ionicons } from '@expo/vector-icons';
+import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
-import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { StyleSheet, Text, View } from 'react-native';
+import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
-export default function ResourcesScreen({navigation}) {
+export default function ResourcesScreen() {
   return (
-    <View>
-        <Text>Hello world</Text>
-    </View>
+
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+    <Text style={styles.titleText}>Resources</Text>   
+    <Text style={styles.subtitleText}>Useful Links</Text>  
+      <OptionButton
+        icon="md-school"
+        label="Hospital Epidemiology and Infection Control (HEIC) Intranet"
+        onPress={() => WebBrowser.openBrowserAsync('https://www.hopkinsmedicine.org/heic/')}
+      />
+      <OptionButton
+        icon="md-school"
+        label="Center for Disease Control and Prevention"
+        onPress={() => WebBrowser.openBrowserAsync('https://www.cdc.gov/')}
+        isLastOption
+      />
+
+    <Text style={styles.subtitleText}>Feedback</Text> 
+      <Text style={styles.optionText}>
+        For suggestions, comments, or updates of the content, please contact:{'\n'}{'\n'}Sergio Navarette: snavarr@jhmi.edu {'\n'}Akbhar Herekar: ahereka1@jhmi.edu {'\n'}Stamatis Baronos: sbaraono2@jhmi.edu
+      </Text>
+    </ScrollView>
+
+  )
+}
+
+function OptionButton({ icon, label, onPress, isLastOption }) {
+  return (
+    <RectButton style={[styles.option, isLastOption && styles.lastOption]} onPress={onPress}>
+      <View style={{ flexDirection: 'row' }}>
+        <View style={styles.optionIconContainer}>
+          <Ionicons name={icon} size={22} color="rgba(0,0,0,0.35)" />
+        </View>
+        <View style={styles.optionTextContainer}>
+          <Text style={styles.optionText}>{label}</Text>
+        </View>
+      </View>
+    </RectButton>
   );
 }
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fafafa',
+  },
+  contentContainer: {
+    paddingTop: 15,
+  },
+  optionIconContainer: {
+    marginRight: 12,
+  },
+  titleText: {
+    marginBottom: 30,
+    fontSize: 36,
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
+  subtitleText: {
+    marginHorizontal: 15,
+    marginBottom: 10,
+    fontSize: 20,
+    alignSelf: 'flex-start',
+    fontWeight: 'bold',
+  },
+  option: {
+    backgroundColor: '#fdfdfd',
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: 0,
+    borderColor: '#ededed',
+  },
+  lastOption: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    marginBottom: 10,
+  },
+  optionText: {
+    fontSize: 15,
+    alignSelf: 'flex-start',
+    marginTop: 1,
+    paddingHorizontal: 15,
+  },
+});

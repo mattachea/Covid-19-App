@@ -49,10 +49,17 @@ export default class RecognitionScreen extends Component {
              <Accordion title="hello" data="bitch please" key={key}>{prop[1]}></Accordion>
            );
         })} */}
-        <Accordion title="Diagnosis" data="Signs and Symptoms:\nCommon: Fever > 99.1*F - 94%, Cough - 79%, Sputum - 23%, Myalgia - 15%
-Unusual: Diarrhea - 5%, N/V - 4%, Silent hypoxemia [6] - small proportion\nTypical Time Course: \n Onset of symptoms after exposure 4- 14 days
-After onset - Day 1 Fever/Cough 1-week Dyspnea " ></Accordion>
-        <Accordion title="Laboratory" data="" ></Accordion>
+        <Accordion title="Diagnosis" data="Signs and Symptoms: ('\n')
+        Common: Fever > 99.1*F - 94%, Cough - 79%, Sputum - 23%, Myalgia - 15%
+        Unusual: Diarrhea - 5%, N/V - 4%, Silent hypoxemia [6] - small proportion
+        Typical Time Course:  
+        Onset of symptoms after exposure 4- 14 days after onset - Day 1 Fever/Cough 1-week Dyspnea " ></Accordion>
+        <Accordion title="Laboratory" data="Pertinent lab abnormalities:
+        Lymphocytopenia, mild leukopenia, mild thrombocytopenia.
+        ⇑ D-dimer,⇑ Serum ferritin, ⇑ Troponin, ⇑ LDH >, ⇑ creatinine
+        COVID-19 PCR Assay:
+        Procedure requires a nasopharyngeal swab.
+        Test was developed at JHH and returns results within 24hrs." ></Accordion>
         <Accordion title="Microbiology" data="" ></Accordion>
         <Accordion title="Imaging" data="" ></Accordion>
         </ScrollView>

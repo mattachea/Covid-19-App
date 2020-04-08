@@ -46,8 +46,7 @@ export default class EpidemiologyScreen extends Component {
             </Text>
           </View>
 
-        <Accordion title="Disease Agent" data="Virus called SARS-CoV-2 and is an enveloped RNA
-coronavirus. Similarity to SARS-CoV-1 from 2003" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Disease Agent" data={getCPRtext("Epidemeology", "Disease%20Agent")} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
         <Accordion title="Transmission" data="Initially wildlife (bats and pangolins) → human. Now
 human→ human. Infectious secretions: resp droplets,
 sputum, blood, serum.[1] Attaches to Angiotensin

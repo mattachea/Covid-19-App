@@ -60,22 +60,21 @@ export default class EpidemiologyScreen extends Component {
              <Accordion title="hello" data="bitch please" key={key}>{prop[1]}></Accordion>
            );
         })} */}
-        <Accordion title="Disease Agent" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Transmission" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="R0" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Case Fatality" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Disease Agent" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Transmission" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="R0" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Case Fatality" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Disease Agent" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Transmission" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="R0" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Case Fatality" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Disease Agent" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Transmission" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="R0" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
-        <Accordion title="Case Fatality" data="bitasdfasdfd d d d d   asdf adfs asfd asd sadf gadf hggj hs fsdg ad fgd dg adf gadf gad gad sfgch please" ></Accordion>
+        <Accordion title="Disease Agent" data="Virus called SARS-CoV-2 and is an enveloped RNA
+coronavirus. Similarity to SARS-CoV-1 from 2003 " ></Accordion>
+        <Accordion title="Transmission" data="Initially wildlife (bats and pangolins) → human. Now
+human→ human. Infectious secretions: resp droplets,
+sputum, blood, serum.[1] Attaches to Angiotensin
+Converting Enzyme-2 (ACE-2) receptor of type II
+pneumocytes" ></Accordion>
+        <Accordion title="R0" data="= number of new cases from a single infection
+= 2.24-3.58 [2]" ></Accordion>
+        <Accordion title="Case Fatality" data="Overall CF ratio (death/confirmed infections) = 4.5%
+(current number) [3]
+CF rate of >80 age group = 14.8%[4]
+Case fatality ratio of “critically ill” 49%[4]" ></Accordion>
+        <Accordion title="Risk Factors for Severity" data="Old age, Coronary Artery Disease, Hypertension,
+Diabetes, Chronic Respiratory Disease [4,5]" ></Accordion>
         </ScrollView>
        </View>
     )

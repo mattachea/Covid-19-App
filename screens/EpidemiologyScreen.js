@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Accordion from '../components/Accordion'
+import { getCPRtext } from '../data/MockDataAPI';
 
 import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -59,14 +60,10 @@ export default class EpidemiologyScreen extends Component {
            return (
              <Accordion title="hello" data="bitch please" key={key}>{prop[1]}></Accordion>
            );
-        })} */}
-        <Accordion title="Disease Agent" data="Virus called SARS-CoV-2 and is an enveloped RNA
-coronavirus. Similarity to SARS-CoV-1 from 2003 " ></Accordion>
-        <Accordion title="Transmission" data="Initially wildlife (bats and pangolins) → human. Now
-human→ human. Infectious secretions: resp droplets,
-sputum, blood, serum.[1] Attaches to Angiotensin
-Converting Enzyme-2 (ACE-2) receptor of type II
-pneumocytes" ></Accordion>
+        })} "Virus called SARS-CoV-2 and is an enveloped RNA
+coronavirus. Similarity to SARS-CoV-1 from 2003 "*/}
+        <Accordion title="Disease Agent" data= {getCPRtext("Epidemeology", "Disease%20Agent")} ></Accordion>
+        <Accordion title="Transmission" data={getCPRtext("Epidemeology", "Transmission")} ></Accordion>
         <Accordion title="R0" data="= number of new cases from a single infection
 = 2.24-3.58 [2]" ></Accordion>
         <Accordion title="Case Fatality" data="Overall CF ratio (death/confirmed infections) = 4.5%

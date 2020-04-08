@@ -9,18 +9,51 @@ import { Ionicons } from '@expo/vector-icons';
 export default function VentilationScreen({navigation}) {
   return (
     <View style={styles.ventilatorsItemContainer}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+      <ScrollView style={styles.container} contentContainerStyle={styles.ventilatorsItemContainer}>
         <View style={styles.ventilatorsItemContainer}>
           <Image
-            source={require('../assets/images/splash.png')}
+            source={require('../assets/images/ltv1200.png')}
             style={styles.ventilatorsPhoto}
           />
           <Text style={styles.ventilatorsName}>
             LTV-1200 Ventilator
           </Text>
         </View>
+
+        <View style={styles.ventilatorsItemContainer}>
+          <Image
+            source={require('../assets/images/servou.png')}
+            style={styles.ventilatorsPhoto}
+          />
+          <Text style={styles.ventilatorsName}>
+            Servo-U Ventilator
+          </Text>
+        </View>
+
+        <View style={styles.ventilatorsItemContainer}>
+          <Image
+            source={require('../assets/images/hamiltong5.png')}
+            style={styles.ventilatorsPhoto}
+          />
+          <Text style={styles.ventilatorsName}>
+            Hamilton-G5
+          </Text>
+        </View>
+
+        <View style={styles.ventilatorsItemContainer}>
+          <Image
+            source={require('../assets/images/PB.png')}
+            style={styles.ventilatorsPhoto}
+          />
+          <Text style={styles.ventilatorsName}>
+            Purittan-Bennet
+          </Text>
+        </View>
+
       </ScrollView>
     </View>
+
+    
   );
 }
 
@@ -43,8 +76,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   ventilatorsPhoto: {
-    width: '100%',
-    height: 155,
+    width: 100,
+    height: 0,
     borderRadius: 20,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,

@@ -33,7 +33,7 @@ export default function ClinicianScreen({navigation}) {
             onPress={() => navigation.navigate('Recognition')}
           >
             <Image 
-              source={require('../assets/images/epidemiology.png')}
+              source={require('../assets/images/recognition.png')}
               style={styles.buttonIcon}
             />    
             <Text style={styles.buttonText}>Recognition</Text>

@@ -7,21 +7,21 @@ import { RectButton, ScrollView } from 'react-native-gesture-handler';
 export default function LinksScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <OptionButton
+      {/* <OptionButton
         icon="md-school"
         label="Read the Expo documentation"
         onPress={() => WebBrowser.openBrowserAsync('https://docs.expo.io')}
-      />
+      /> */}
 
     <Text style={styles.titleText}>
         About
     </Text>
 
     <Text style={styles.optionText}>
-Thank you for downloading the “[insert name]” App!
-[name] is intended to provide healthcare providers with easily accessible information during the COVID19 pandemic. This app provide resources for clinicians on relevant up-to-date information of COVID19 and hospital protocols for PPE usage and ventilation. 
-
-The ventilation tab is intended as quick reference for those who have experience in ventilation (i.e. respiratory therapists, anesthesiologists) and as a step-by-step resource for inexperienced providers called upon to manage ventilated patients during the COVID crisis.
+Thank you for downloading the Covid-19 Pocket Reference App! {'\n'} {'\n'}
+This is intended to provide healthcare providers with easily accessible information during the COVID19 pandemic. 
+{'\n'}{'\n'}This app provide resources for clinicians on relevant up-to-date information of COVID19 and hospital protocols for PPE usage and ventilation. 
+{'\n'} {'\n'}The ventilation tab is intended as quick reference for those who have experience in ventilation (i.e. respiratory therapists, anesthesiologists) and as a step-by-step resource for inexperienced providers called upon to manage ventilated patients during the COVID crisis.
 
   </Text>
     </ScrollView>

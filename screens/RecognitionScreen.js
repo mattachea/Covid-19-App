@@ -53,15 +53,15 @@ export default class RecognitionScreen extends Component {
         Common: Fever > 99.1*F - 94%, Cough - 79%, Sputum - 23%, Myalgia - 15%
         Unusual: Diarrhea - 5%, N/V - 4%, Silent hypoxemia [6] - small proportion
         Typical Time Course:  
-        Onset of symptoms after exposure 4- 14 days after onset - Day 1 Fever/Cough 1-week Dyspnea " colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        Onset of symptoms after exposure 4- 14 days after onset - Day 1 Fever/Cough 1-week Dyspnea " colorRow = "#EFCB34" colorChild = "#bcf2a0"></Accordion>
         <Accordion title="Laboratory" data="Pertinent lab abnormalities:
         Lymphocytopenia, mild leukopenia, mild thrombocytopenia.
         ⇑ D-dimer,⇑ Serum ferritin, ⇑ Troponin, ⇑ LDH >, ⇑ creatinine
         COVID-19 PCR Assay:
         Procedure requires a nasopharyngeal swab.
-        Test was developed at JHH and returns results within 24hrs." colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="Microbiology" data="" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="Imaging" data="" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        Test was developed at JHH and returns results within 24hrs." colorRow = "#EFCB34" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Microbiology" data="" colorRow = "#EFCB34" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Imaging" data="" colorRow = "#EFCB34" colorChild = "#bcf2a0"></Accordion>
         </ScrollView>
        </View>
     )

@@ -13,20 +13,19 @@ export default function LinksScreen() {
         onPress={() => WebBrowser.openBrowserAsync('https://docs.expo.io')}
       />
 
-      <OptionButton
-        icon="md-compass"
-        label="Read the React Navigation documentation"
-        onPress={() => WebBrowser.openBrowserAsync('https://reactnavigation.org')}
-      />
+    <Text style={styles.titleText}>
+        About
+    </Text>
 
-      <OptionButton
-        icon="ios-chatboxes"
-        label="Ask a question on the forums"
-        onPress={() => WebBrowser.openBrowserAsync('https://forums.expo.io')}
-        isLastOption
-      />
+    <Text style={styles.optionText}>
+Thank you for downloading the “[insert name]” App!
+[name] is intended to provide healthcare providers with easily accessible information during the COVID19 pandemic. This app provide resources for clinicians on relevant up-to-date information of COVID19 and hospital protocols for PPE usage and ventilation. 
+
+The ventilation tab is intended as quick reference for those who have experience in ventilation (i.e. respiratory therapists, anesthesiologists) and as a step-by-step resource for inexperienced providers called upon to manage ventilated patients during the COVID crisis.
+
+  </Text>
     </ScrollView>
-  );
+  )
 }
 
 function OptionButton({ icon, label, onPress, isLastOption }) {
@@ -44,6 +43,8 @@ function OptionButton({ icon, label, onPress, isLastOption }) {
   );
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -54,6 +55,12 @@ const styles = StyleSheet.create({
   },
   optionIconContainer: {
     marginRight: 12,
+  },
+  titleText: {
+    marginTop: 30,
+    marginBottom: 30,
+    fontSize: 36,
+    textAlign: 'center',
   },
   option: {
     backgroundColor: '#fdfdfd',
@@ -70,5 +77,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     alignSelf: 'flex-start',
     marginTop: 1,
+    paddingHorizontal: 15,
   },
 });

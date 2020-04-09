@@ -1,6 +1,0 @@
-
-function Accordion(props) {
-    return (
-        ''
-    )
-}

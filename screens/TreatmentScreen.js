@@ -92,7 +92,7 @@ Rapid LV assessment with POCUS - concern regarding myocarditis
 Early cardiology consult with a new depressed function or arrhythmia.
 Inotropic support may be considered" colorRow = "#E75351" colorChild = "#E79A99"></Accordion>
         <Accordion title="Discharge" data="Based on recommendations from China: no fever for at least 3 days, substantial lungs’ improvement in imaging studies, clinical
-remission of respiratory symptoms, and two throat-swab samples negative for SARS-CoV-2 RNA obtained at least 24 h apart.[2]" colorRow = "#E75351" colorChild = "#E79A99 "></Accordion>
+remission of respiratory symptoms, and two throat-swab samples negative for SARS-CoV-2 RNA obtained at least 24 h apart.[2]" colorRow = "#E75351" colorChild = "#E79A99"></Accordion>
         </ScrollView>
        </View>
     )

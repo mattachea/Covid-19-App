@@ -5,10 +5,11 @@ import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { db } from '../config';
+import { data } from '../App';
+
 
 
 export default class EpidemiologyScreen extends Component {
-  
   constructor(props) {
     super(props);
     this.state = {
@@ -16,16 +17,21 @@ export default class EpidemiologyScreen extends Component {
     };
   }
 
-  async getDesc() {
-    const snapshot = await db.ref('cpr/epi/diseaseAgent').once('value');
-    let data = snapshot.val();
-    this.setState({ data });
+  async getData() {
+    try {
+      const snapshot = await db.ref('cpr/epi').once('value');
+      // let data = JSON.stringify(snapshot.val())
+      let data = snapshot.val()
+      this.setState({data})
+    } catch(e) {
+      console.warn(e);
+    }
+  }
+  componentDidMount() {
+    this.getData();
   }
 
   render() {
-    this.getDesc();
-    // const desc = this.state.data;
-    // const desc2 = desc["Hamilton G-5"];
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -40,16 +46,11 @@ export default class EpidemiologyScreen extends Component {
             </Text>
           </View>
 
-        <Accordion title="Disease Agent" data={JSON.stringify(this.state.data)} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="Transmission" data={JSON.stringify(this.state.data)} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="R0" data="= number of new cases from a single infection
-= 2.24-3.58 [2]" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="Case Fatality" data="Overall CF ratio (death/confirmed infections) = 4.5%
-(current number) [3]
-CF rate of >80 age group = 14.8%[4]
-Case fatality ratio of “critically ill” 49%[4]" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="Risk Factors for Severity" data="Old age, Coronary Artery Disease, Hypertension,
-Diabetes, Chronic Respiratory Disease [4,5]" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Disease Agent" data={this.state.data.diseaseAgent} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Transmission" data={this.state.data.transmission} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="R0" data={this.state.data.r0} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Case Fatality" data={this.state.data.caseFatality} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Risk Factors for Severity" data={this.state.data.risk} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
         </ScrollView>
        </View>
     )

@@ -58,6 +58,8 @@ export default function App(props) {
     loadResourcesAndDataAsync();
   }, []);
 
+
+
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return null;
   } else {

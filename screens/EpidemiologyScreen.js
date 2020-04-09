@@ -1,37 +1,32 @@
 import React, {Component} from 'react';
 import Accordion from '../components/Accordion'
-import { getCPRtext } from '../data/MockDataAPI';
 
 import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { db } from '../config';
+
 
 export default class EpidemiologyScreen extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
-      information :[
-        { 
-          title: 'Non Veg Biryanis', 
-          data: 'Biryani also known as biriyani, biriani, birani or briyani, is a mixed rice dish with its origins among the Muslims of the Indian subcontinent. This dish is especially popular throughout the Indian subcontinent, as well as among the diaspora from the region. It is also prepared in other regions such as Iraqi Kurdistan.',
-        },
-        { 
-          title: 'Pizzas',
-          data: 'Pizza is a savory dish of Italian origin, consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and various other ingredients (anchovies, olives, meat, etc.) baked at a high temperature, traditionally in a wood-fired oven. In formal settings, like a restaurant, pizza is eaten with knife and fork, but in casual settings it is cut into wedges to be eaten while held in the hand. Small pizzas are sometimes called pizzettas.'
-        },
-        { 
-         title: 'Drinks',
-         data: 'A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture. Common types of drinks include plain drinking water, milk, coffee, tea, hot chocolate, juice and soft drinks. In addition, alcoholic drinks such as wine, beer, and liquor, which contain the drug ethanol, have been part of human culture for more than 8,000 years.'
-        },
-        { 
-          title: 'Deserts',
-          data: 'A dessert is typically the sweet course that concludes a meal in the culture of many countries, particularly Western culture. The course usually consists of sweet foods, but may include other items. The word "dessert" originated from the French word desservir "to clear the table" and the negative of the Latin word servire'
-        },
-      ]
-     }
+      descriptions: {}
+    };
+  }
+
+  async getDesc() {
+    const snapshot = await db.ref('cpr/epi/disease-agent').once('value');
+    let data = snapshot.val();
+    //let descriptions = Object.values(data);
+    //console.log(data);
+    this.setState({ data });
   }
 
   render() {
+    this.getDesc();
+    //const { descriptions } = this.state;
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -46,7 +41,7 @@ export default class EpidemiologyScreen extends Component {
             </Text>
           </View>
 
-        <Accordion title="Disease Agent" data={getCPRtext("Epidemeology", "Disease%20Agent")} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Disease Agent" data={JSON.stringify(this.state.data)} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
         <Accordion title="Transmission" data="Initially wildlife (bats and pangolins) → human. Now
 human→ human. Infectious secretions: resp droplets,
 sputum, blood, serum.[1] Attaches to Angiotensin

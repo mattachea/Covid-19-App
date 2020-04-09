@@ -19,7 +19,7 @@ import VentilationScreen from './screens/VentilationScreen';
 import PPEScreen from './screens/PPEScreen';
 import ResourcesScreen from './screens/ResourcesScreen';
 
-const Stack = createStackNavigator(); 
+const Stack = createStackNavigator();
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);

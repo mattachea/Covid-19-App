@@ -1,1 +1,9 @@
-{}
+{
+  "expoServerPort": 19000,
+  "expoServerNgrokUrl": "https://3x-myu.anonymous.mattcovid.exp.direct",
+  "packagerNgrokUrl": "https://packager.3x-myu.anonymous.mattcovid.exp.direct",
+  "ngrokPid": 6693,
+  "devToolsPort": 19002,
+  "packagerPort": 19005,
+  "packagerPid": 6668
+}

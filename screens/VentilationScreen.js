@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 5,
     shadowOpacity: 1.0,
-    elevation: 3
+    // elevation: 3
   },
   ventilatorsName: {
     flex: 1,

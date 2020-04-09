@@ -19,7 +19,12 @@ import VentilationScreen from './screens/VentilationScreen';
 import PPEScreen from './screens/PPEScreen';
 import ResourcesScreen from './screens/ResourcesScreen';
 
-const Stack = createStackNavigator();
+// import Vent1Screen from './screens/Vent1Screen';
+// import Vent2Screen from './screens/Vent2Screen';
+// import Vent3Screen from './screens/Vent3Screen';
+// import Vent4Screen from './screens/Vent4Screen';
+
+const Stack = createStackNavigator(); 
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
@@ -72,6 +77,11 @@ export default function App(props) {
             <Stack.Screen name="Ventilation" component={VentilationScreen} options={{ title: null }}/>
             <Stack.Screen name="PPE" component={PPEScreen} options={{ title: null }}/>
             <Stack.Screen name="Resources" component={ResourcesScreen} options={{ title: null }}/>
+
+            {/* <Stack.Screen name="Vent1" component={Vent1Screen} options={{ title: null }}/>
+            <Stack.Screen name="Vent2" component={Vent2Screen} options={{ title: null }}/>
+            <Stack.Screen name="Vent3" component={Vent3Screen} options={{ title: null }}/>
+            <Stack.Screen name="Vent4" component={Vent4Screen} options={{ title: null }}/> */}
             
           </Stack.Navigator>
         </NavigationContainer>

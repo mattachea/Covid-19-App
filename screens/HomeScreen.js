@@ -16,7 +16,7 @@ export default function HomeScreen({navigation}) {
             style={styles.titleImage}
           />
           <Text style={styles.titleText}>
-            Covid-19 {"\n"} Critical Care Reference
+            Covid-19 {"\n"}Pocket Reference
           </Text>
 
           <View style={styles.buttonContainer}>
@@ -35,10 +35,9 @@ export default function HomeScreen({navigation}) {
             style={styles.buttonStyle}
             onPress={() => navigation.navigate('Ventilation')}
           >
-            <Ionicons
-              name={"md-radio"}
-              size={30}
-              style={{marginLeft: 0}}
+            <Image 
+              source={require('../assets/images/ventilator.png')}
+              style={styles.buttonIcon}
             />
             <Text style={styles.buttonText}>Ventilation</Text>
           </TouchableOpacity>
@@ -87,8 +86,8 @@ const styles = StyleSheet.create({
   buttonContainer: {
   },
   buttonIcon:{
-    width:30,
-    height:30,
+    width:40,
+    height:40,
     resizeMode: 'contain',
   },
   buttonStyle: {

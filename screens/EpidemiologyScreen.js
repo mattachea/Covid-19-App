@@ -12,21 +12,20 @@ export default class EpidemiologyScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      descriptions: {}
+      data: {},
     };
   }
 
   async getDesc() {
-    const snapshot = await db.ref('cpr/epi/disease-agent').once('value');
+    const snapshot = await db.ref('ventilators').once('value');
     let data = snapshot.val();
-    //let descriptions = Object.values(data);
-    //console.log(data);
     this.setState({ data });
   }
 
   render() {
     this.getDesc();
-    //const { descriptions } = this.state;
+    const desc = this.state.data;
+    const desc2 = desc["Hamilton G-5"];
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -41,12 +40,8 @@ export default class EpidemiologyScreen extends Component {
             </Text>
           </View>
 
-        <Accordion title="Disease Agent" data={JSON.stringify(this.state.data)} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="Transmission" data="Initially wildlife (bats and pangolins) → human. Now
-human→ human. Infectious secretions: resp droplets,
-sputum, blood, serum.[1] Attaches to Angiotensin
-Converting Enzyme-2 (ACE-2) receptor of type II
-pneumocytes" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Disease Agent" data={JSON.stringify(desc2["photo_url"])} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Transmission" data={JSON.stringify(this.state.data)} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
         <Accordion title="R0" data="= number of new cases from a single infection
 = 2.24-3.58 [2]" colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
         <Accordion title="Case Fatality" data="Overall CF ratio (death/confirmed infections) = 4.5%

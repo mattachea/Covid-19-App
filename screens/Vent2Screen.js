@@ -6,6 +6,6 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function Vent2Screen({navigation}) {
   return (
-        <Text> hello world.</Text>
+        <Text> Video and Quick Reference Placeholder!</Text>
   );
 }

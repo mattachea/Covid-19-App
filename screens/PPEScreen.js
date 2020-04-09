@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default function PPEScreen({navigation}) {
   return (
     <View>
-        <Text>Hello world</Text>
+        <Text>Placeholder for PPE Videos</Text>
     </View>
   );
 }

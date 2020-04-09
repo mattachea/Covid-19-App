@@ -49,17 +49,17 @@ export default class TreatmentScreen extends Component {
              <Accordion title="hello" data="bitch please" key={key}>{prop[1]}></Accordion>
            );
         })} */}
-        <Accordion title="Overall" data="ALWAYS wear PPE and PAPR or N95 + Face Shield Clustered care. Be proactive regarding procedures" colorRow = "#E75351" colorChild = "#bcf2a0"></Accordion>
+        <Accordion title="Overall" data="ALWAYS wear PPE and PAPR or N95 + Face Shield Clustered care. Be proactive regarding procedures" colorRow = "#E75351" colorChild = "#E79A99"></Accordion>
         <Accordion title="Medications" data="Currently limited data on antiviral therapy.
 Data on steroid is conflicting [11,12]
 Consult ID. Enroll into clinical trials. Lopinavir/Ritonavir has no benefit [10]
-Steroids can be considered for other indications (e.g.: COPD exacerbation)" colorRow = "#E75351" colorChild = "#bcf2a0"></Accordion>
+Steroids can be considered for other indications (e.g.: COPD exacerbation)" colorRow = "#E75351" colorChild = "#E79A99"></Accordion>
         <Accordion title="Fluids Feeding Renal" data="Avoid 30ml/kg bolus.
 Patients often have stopped eating for several days.
 Renal failure is common
 Conservative fluid management. Early vasopressor. PRN Fluids.
 Early feeding is important - often through NG or ND.
-Consider CVVH. If unavailable, can use iHD w low dose vasopressors." colorRow = "#E75351" colorChild = "#bcf2a0"></Accordion>
+Consider CVVH. If unavailable, can use iHD w low dose vasopressors." colorRow = "#E75351" colorChild = "#E79A99"></Accordion>
         <Accordion title="Respiratory Care" data="ALWAYS have patients wear a surgical mask.
 High flow NC: do NOT exceed 40L/min flow.
 If FiO2 > 50% call for evaluation of intubation.
@@ -73,7 +73,7 @@ ARDS protocol 6 ml/kg of predicted body weight.[13]
 Plateau pressure < 30 cm H2O and Driving Pressure < 14 cm H2O [14].
 If P:F < 150 mmHg, prone positioning for at least 18-24 hours daily [15]
 Consider neuromuscular blockade and iNO
-Permissive hypercapnia pH > 7.2" colorRow = "#E75351" colorChild = "#bcf2a0"></Accordion>
+Permissive hypercapnia pH > 7.2" colorRow = "#E75351" colorChild = "#E79A99"></Accordion>
         <Accordion title="Intubation" data="Caution! Aerosolizing procedure.
 Avoid bag-valve ventilation.
 Have norepi, sedation and ventilator ready.
@@ -82,7 +82,7 @@ PAPR and full modified PPE including 3 sets of gloves to be worn.
 Airway team:One nurse, one intubator +/- assistant, one RT.
 Video + standard laryngoscope w/ sized blades. 7 and 7.5 ETT + stylet.
 ● Yankauer suction, oral airways, LMA +/- Bougie
-● CO2 colorimetric detector, high efficiency hydrophobic filter" colorRow = "#E75351" colorChild = "#bcf2a0"></Accordion>
+● CO2 colorimetric detector, high efficiency hydrophobic filter" colorRow = "#E75351" colorChild = "#E79A99"></Accordion>
         <Accordion title="Cardiac" data="Emerging concern for viral cardiomyopathy.
 Ventricular arrhythmia and asystole has been reported.
 ● May occur as lungs begin to recover
@@ -90,9 +90,9 @@ Do NOT bag ventilate during a code unless intubated.
 Critical Care Ultrasound for Monitoring
 Rapid LV assessment with POCUS - concern regarding myocarditis
 Early cardiology consult with a new depressed function or arrhythmia.
-Inotropic support may be considered" colorRow = "#E75351" colorChild = "#bcf2a0"></Accordion>
+Inotropic support may be considered" colorRow = "#E75351" colorChild = "#E79A99"></Accordion>
         <Accordion title="Discharge" data="Based on recommendations from China: no fever for at least 3 days, substantial lungs’ improvement in imaging studies, clinical
-remission of respiratory symptoms, and two throat-swab samples negative for SARS-CoV-2 RNA obtained at least 24 h apart.[2]" colorRow = "#E75351" colorChild = "#bcf2a0"></Accordion>
+remission of respiratory symptoms, and two throat-swab samples negative for SARS-CoV-2 RNA obtained at least 24 h apart.[2]" colorRow = "#E75351" colorChild = "#E79A99 "></Accordion>
         </ScrollView>
        </View>
     )

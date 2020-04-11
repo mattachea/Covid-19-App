@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Accordion from '../components/Accordion'
-
 import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -43,44 +41,106 @@ export default class EpidemiologyScreen extends Component {
             />    
             <Text style={styles.titleText}>
             Epidemiology
-            </Text>
-          </View>
+          </Text>
 
-        <Accordion title="Disease Agent" data={this.state.data.diseaseAgent} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="Transmission" data={this.state.data.transmission} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="R0" data={this.state.data.r0} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="Case Fatality" data={this.state.data.caseFatality} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        <Accordion title="Risk Factors for Severity" data={this.state.data.risk} colorRow = "#7ED551" colorChild = "#bcf2a0"></Accordion>
-        </ScrollView>
-       </View>
-    )
-  }
+        <View style={styles.buttonContainer}>
+        <TouchableOpacity
+            style={[{backgroundColor: '#7ED551'}, styles.buttonStyle]}
+            onPress={() => this.props.navigation.navigate('DiseaseAgent')}
+          
+          >
+        <Text style={styles.buttonText}>Disease Agent</Text>
+        </TouchableOpacity>
+
+   
+        <TouchableOpacity
+            style={[{backgroundColor: '#7ED551'}, styles.buttonStyle]}
+            onPress={() => this.props.navigation.navigate('Transmission')}
+          >
+        <Text style={styles.buttonText}>Transmission</Text>
+        </TouchableOpacity>
+
+
+        <TouchableOpacity
+            style={[{backgroundColor: '#7ED551'}, styles.buttonStyle]}
+            onPress={() => this.props.navigation.navigate('R0')}
+          >
+        <Text style={styles.buttonText}>R0</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+            style={[{backgroundColor: '#7ED551'}, styles.buttonStyle]}
+            onPress={() => this.props.navigation.navigate('CaseFatality')}
+          >
+        <Text style={styles.buttonText}>Case Fatality</Text>
+        </TouchableOpacity>
+
+        
+        <TouchableOpacity
+            style={[{backgroundColor: '#7ED551'}, styles.buttonStyle]}
+            onPress={() => this.props.navigation.navigate('RiskFactors')}
+          >
+        <Text style={styles.buttonText}>Risk Factors for Severity</Text>
+        </TouchableOpacity>
+        
+        </View>
+
+</View>
+  </ScrollView>
+    </View>
+   )
 }
-
+}
+//Styling
 const styles = StyleSheet.create({
   container: {
-   flex:1,
-   backgroundColor: '#ffff',
-
+    flex: 1,
+    backgroundColor: '#fff',
   },
   titleContainer: {
     alignItems: 'center',
     marginTop: 10,
     marginBottom: 20,
-    backgroundColor:'#ffff',
   },
   titleText: {
     marginTop: 30,
     marginBottom: 30,
     fontSize: 36,
-    fontWeight:'bold',
     textAlign: 'center',
-    color: '#7ED551',
   },
   titleImage: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     resizeMode: 'contain',
-    marginTop: 3,
+  },
+  buttonContainer: {
+    alignItems:'center',
+  },
+  buttonIcon:{
+    width:50,
+    height:50,
+    resizeMode: 'contain',
+  },
+  buttonStyle: {
+    flexDirection: 'row',
+    marginVertical: 8,
+    alignItems:'center',
+    justifyContent:'center',
+    width:350,
+    height:90,
+    borderRadius:20,
+    shadowColor: 'rgba(0,0,0, .4)', // IOS
+    shadowOffset: { height: 1, width: 0 }, // IOS
+    shadowOpacity: 1, // IOS 
+    shadowRadius: 1, //IOS
+    elevation: 1, // Android
+  },
+  buttonText: {
+    paddingHorizontal: 20,
+    color: '#FFFFFF',
+    fontSize: 24,
+  },
+  contentContainer: {
+    paddingTop: 0,
   },
 });

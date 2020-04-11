@@ -5,12 +5,13 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 import { Video } from 'expo-av';
 
-export default function Vent1Screen({navigation}) {
+export default function DiseaseAgentScreen({navigation}) {
 
   return (
     <View style = {styles.container}>
         <ScrollView>
-          <Text style={styles.titleText}> LTV-1200 Quick Reference Guide</Text>
+          <Text style={styles.titleText}> Disease Agent</Text>
+          data={this.state.data.diseaseAgent}
         </ScrollView>
     </View>
   );

@@ -24,6 +24,12 @@ import Vent2Screen from './screens/Vent2Screen';
 import Vent3Screen from './screens/Vent3Screen';
 import Vent4Screen from './screens/Vent4Screen';
 
+import DiseaseAgentScreen from './screens/DiseaseAgentScreen';
+import TransmissionScreen from './screens/TransmissionScreen';
+import R0Screen from './screens/R0Screen';
+import CaseFatalityScreen from './screens/CaseFatalityScreen';
+import RiskFactorsScreen from './screens/RiskFactorsScreen';
+
 const Stack = createStackNavigator(); 
 
 export default function App(props) {
@@ -86,6 +92,12 @@ export default function App(props) {
             <Stack.Screen name="Vent3" component={Vent3Screen} options={{ title: null }}/>
             <Stack.Screen name="Vent4" component={Vent4Screen} options={{ title: null }}/> 
             
+            <Stack.Screen name="DiseaseAgent" component={DiseaseAgentScreen} options={{ title: null }}/> 
+            <Stack.Screen name="Transmission" component={TransmissionScreen} options={{ title: null }}/> 
+            <Stack.Screen name="R0" component={R0Screen} options={{ title: null }}/> 
+            <Stack.Screen name="CaseFatality" component={CaseFatalityScreen} options={{ title: null }}/> 
+            <Stack.Screen name="RiskFactors" component={RiskFactorsScreen} options={{ title: null }}/> 
+
           </Stack.Navigator>
         </NavigationContainer>
       </View>

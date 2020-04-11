@@ -35,7 +35,7 @@ export default class DiseaseAgentScreen extends Component {
         <View style = {styles.container}>
           <ScrollView>
             <Text style={styles.titleText}> Disease Agent</Text>
-            <Text style={styles.subtitleText} data={this.state.data.diseaseAgent}></Text>
+            <Text style={styles.subtitleText}>{this.state.data.diseaseAgent}</Text>
           </ScrollView>
         </View>
   );

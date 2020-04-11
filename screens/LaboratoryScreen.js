@@ -18,7 +18,7 @@ export default class LaboratoryScreen extends Component {
   }
   async getData() {
     try {
-      const snapshot = await db.ref('cpr/epi').once('value');
+      const snapshot = await db.ref('cpr/recognition').once('value');
       // let data = JSON.stringify(snapshot.val())
       let data = snapshot.val()
       this.setState({data})
@@ -35,7 +35,7 @@ export default class LaboratoryScreen extends Component {
         <View style = {styles.container}>
           <ScrollView>
             <Text style={styles.titleText}> Laboratory</Text>
-            <Text style={styles.subtitleText} data={this.state.data.diseaseAgent}></Text>
+            <Text style={styles.subtitleText} data={this.state.data.Laboratory}></Text>
           </ScrollView>
         </View>
   );

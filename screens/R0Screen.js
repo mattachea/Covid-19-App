@@ -1,35 +1,45 @@
-import * as React from 'react';
+import React, {Component} from 'react';
 import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity, Dimensions, Animated} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 import { Video } from 'expo-av';
+import { db } from '../config';
+import { data } from '../App';
+import Accordion from '../components/Accordion'
 
-export default function R0Screen({navigation}) {
+export default class R0Screen extends Component {
 
-  return (
-    <View style = {styles.container}>
-        <ScrollView>
-          <Text style={styles.titleText}> LTV-1200 Quick Reference Guide</Text>
-          <Image
-            style={{ width: 200, height: 300, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
-            source={require('../assets/images/LTV_1200_Quick_Guide.png')}
-          />
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {},
+    };
+  }
+  async getData() {
+    try {
+      const snapshot = await db.ref('cpr/epi').once('value');
+      // let data = JSON.stringify(snapshot.val())
+      let data = snapshot.val()
+      this.setState({data})
+    } catch(e) {
+      console.warn(e);
+    }
+  }
+  componentDidMount() {
+    this.getData();
+  }
 
-            <Text style={styles.subtitleText}></Text>
-            <Text style={styles.subtitleText}>Tutorial Video</Text>
-            <Video
-              source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
-              rate={1.0}
-              volume={1.0}
-              isMuted={false}
-              resizeMode="contain"
-              useNativeControls={true}
-              style={{ width: 350, height: 197 , alignSelf: 'center'}}
-            />
-        </ScrollView>
-    </View>
+  render() {
+    return (
+        <View style = {styles.container}>
+          <ScrollView>
+            <Text style={styles.titleText}>R0</Text>
+            <Text style={styles.subtitleText}>{this.state.data.r0}</Text>
+          </ScrollView>
+        </View>
   );
+}
 }
 
 const styles = StyleSheet.create({

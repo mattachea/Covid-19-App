@@ -35,7 +35,7 @@ export default class DiagnosisScreen extends Component {
         <View style = {styles.container}>
           <ScrollView>
             <Text style={styles.titleText}> Diagnosis</Text>
-            <Text style={styles.subtitleText} data={this.state.data.diseaseAgent}></Text>
+            <Text style={styles.subtitleText} data={this.state.data.Diagnosis}></Text>
           </ScrollView>
         </View>
   );

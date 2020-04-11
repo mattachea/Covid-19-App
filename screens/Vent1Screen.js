@@ -11,22 +11,6 @@ export default function Vent1Screen({navigation}) {
     <View style = {styles.container}>
         <ScrollView>
           <Text style={styles.titleText}> LTV-1200 Quick Reference Guide</Text>
-          <Image
-            style={{ width: 200, height: 300, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
-            source={require('../assets/images/ltv1200.png')}
-          />
-
-            <Text style={styles.subtitleText}></Text>
-            <Text style={styles.subtitleText}>Tutorial Video</Text>
-            <Video
-              source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
-              rate={1.0}
-              volume={1.0}
-              isMuted={false}
-              resizeMode="contain"
-              useNativeControls={true}
-              style={{ width: 350, height: 197 , alignSelf: 'center'}}
-            />
         </ScrollView>
     </View>
   );

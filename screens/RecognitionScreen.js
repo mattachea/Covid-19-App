@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Accordion from '../components/Accordion'
-
 import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { db } from '../config';
+import { data } from '../App';
+
 
 
 export default class RecognitionScreen extends Component {
@@ -16,11 +16,15 @@ export default class RecognitionScreen extends Component {
   }
 
   async getData() {
-    const snapshot = await db.ref('cpr/recognition').once('value');
-    let data = snapshot.val();
-    this.setState({ data });
+    try {
+      const snapshot = await db.ref('cpr/recognition').once('value');
+      // let data = JSON.stringify(snapshot.val())
+      let data = snapshot.val()
+      this.setState({data})
+    } catch(e) {
+      console.warn(e);
+    }
   }
-
   componentDidMount() {
     this.getData();
   }
@@ -37,43 +41,99 @@ export default class RecognitionScreen extends Component {
             />    
             <Text style={styles.titleText}>
             Recognition
-            </Text>
-          </View>
+          </Text>
 
-        <Accordion title="Diagnosis" data={this.state.data.Diagnosis} colorRow = "#EFCB34" colorChild = "#F3EFB1"></Accordion>
-        <Accordion title="Laboratory" data={this.state.data.Laboratory} colorRow = "#EFCB34" colorChild = "#F3EFB1"></Accordion>
-        <Accordion title="Microbiology" data={this.state.data.Microbiology} colorRow = "#EFCB34" colorChild = "#F3EFB1"></Accordion>
-        <Accordion title="Imaging" data={this.state.data.Imaging} colorRow = "#EFCB34" colorChild = "#F3EFB1"></Accordion>
-        </ScrollView>
-       </View>
-    )
-  }
+        <View style={styles.buttonContainer}>
+        <TouchableOpacity
+            style={[{backgroundColor: '#EFCB34'}, styles.buttonStyle]}
+            onPress={() => this.props.navigation.navigate('Diagnosis')}
+          
+          >
+        <Text style={styles.buttonText}>Diagnosis</Text>
+        </TouchableOpacity>
+
+   
+        <TouchableOpacity
+            style={[{backgroundColor: '#EFCB34'}, styles.buttonStyle]}
+            onPress={() => this.props.navigation.navigate('Laboratory')}
+          >
+        <Text style={styles.buttonText}>Laboratory</Text>
+        </TouchableOpacity>
+
+
+        <TouchableOpacity
+            style={[{backgroundColor: '#EFCB34'}, styles.buttonStyle]}
+            onPress={() => this.props.navigation.navigate('Microbiology')}
+          >
+        <Text style={styles.buttonText}>Microbiology</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+            style={[{backgroundColor: '#EFCB34'}, styles.buttonStyle]}
+            onPress={() => this.props.navigation.navigate('Imaging')}
+          >
+        <Text style={styles.buttonText}>Imaging</Text>
+        </TouchableOpacity>
+        </View>
+
+</View>
+  </ScrollView>
+    </View>
+   )
 }
-
+}
+//Styling
 const styles = StyleSheet.create({
   container: {
-   flex:1,
-   backgroundColor: '#ffff',
-
+    flex: 1,
+    backgroundColor: '#fff',
   },
   titleContainer: {
     alignItems: 'center',
     marginTop: 10,
     marginBottom: 20,
-    backgroundColor:'#ffff',
   },
   titleText: {
     marginTop: 30,
     marginBottom: 30,
     fontSize: 36,
-    fontWeight:'bold',
     textAlign: 'center',
-    color: '#EFCB34',
   },
   titleImage: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     resizeMode: 'contain',
-    marginTop: 3,
+  },
+  buttonContainer: {
+    alignItems:'center',
+  },
+  buttonIcon:{
+    width:50,
+    height:50,
+    resizeMode: 'contain',
+  },
+  buttonStyle: {
+    flexDirection: 'row',
+    marginVertical: 8,
+    alignItems:'center',
+    justifyContent:'center',
+    width:350,
+    height:90,
+    borderRadius:20,
+    shadowColor: 'rgba(0,0,0, .4)', // IOS
+    shadowOffset: { height: 1, width: 0 }, // IOS
+    shadowOpacity: 1, // IOS 
+    shadowRadius: 1, //IOS
+    elevation: 1, // Android
+  },
+  buttonText: {
+    paddingHorizontal: 20,
+    color: '#FFFFFF',
+    fontSize: 24,
+  },
+  contentContainer: {
+    paddingTop: 0,
   },
 });
+
+

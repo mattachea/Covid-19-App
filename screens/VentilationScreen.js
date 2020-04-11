@@ -14,7 +14,7 @@ export default function VentilationScreen({navigation}) {
     <Text style={styles.titleText}>
         Ventilator Model {"\n"} Reference
     </Text>
-      <TouchableOpacity
+          <TouchableOpacity
             style={styles.buttonStyle}
             onPress={() => navigation.navigate('Vent1')}
           >

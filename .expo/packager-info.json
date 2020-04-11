@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 35597,
-  "expoServerNgrokUrl": "https://3x-myu.12laura.covid.exp.direct",
-  "packagerNgrokUrl": "https://packager.3x-myu.12laura.covid.exp.direct",
-  "ngrokPid": 35616,
+  "packagerPid": 38096,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": 19006
 }

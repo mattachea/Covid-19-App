@@ -8,7 +8,7 @@ import { db } from '../config';
 import { data } from '../App';
 import Accordion from '../components/Accordion'
 
-export default class DiseaseAgentScreen extends Component {
+export default class DiagnosisScreen extends Component {
 
   constructor(props) {
     super(props);
@@ -18,7 +18,7 @@ export default class DiseaseAgentScreen extends Component {
   }
   async getData() {
     try {
-      const snapshot = await db.ref('cpr/epi').once('value');
+      const snapshot = await db.ref('cpr/recognition').once('value');
       // let data = JSON.stringify(snapshot.val())
       let data = snapshot.val()
       this.setState({data})
@@ -34,7 +34,7 @@ export default class DiseaseAgentScreen extends Component {
     return (
         <View style = {styles.container}>
           <ScrollView>
-            <Text style={styles.titleText}> Disease Agent</Text>
+            <Text style={styles.titleText}> Diagnosis</Text>
             <Text style={styles.subtitleText} data={this.state.data.diseaseAgent}></Text>
           </ScrollView>
         </View>

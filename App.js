@@ -30,6 +30,10 @@ import R0Screen from './screens/R0Screen';
 import CaseFatalityScreen from './screens/CaseFatalityScreen';
 import RiskFactorsScreen from './screens/RiskFactorsScreen';
 
+import DiagnosisScreen from './screens/DiagnosisScreen';
+import LaboratoryScreen from './screens/LaboratoryScreen';
+import MicrobiologyScreen from './screens/MicrobiologyScreen';
+import ImagingScreen from './screens/ImagingScreen';
 const Stack = createStackNavigator(); 
 
 export default function App(props) {
@@ -98,6 +102,10 @@ export default function App(props) {
             <Stack.Screen name="CaseFatality" component={CaseFatalityScreen} options={{ title: null }}/> 
             <Stack.Screen name="RiskFactors" component={RiskFactorsScreen} options={{ title: null }}/> 
 
+            <Stack.Screen name="Diagnosis" component={DiagnosisScreen} options={{ title: null }}/> 
+            <Stack.Screen name="Laboratory" component={LaboratoryScreen} options={{ title: null }}/> 
+            <Stack.Screen name="Microbiology" component={MicrobiologyScreen} options={{ title: null }}/> 
+            <Stack.Screen name="Imaging" component={ImagingScreen} options={{ title: null }}/> 
           </Stack.Navigator>
         </NavigationContainer>
       </View>

@@ -66,7 +66,7 @@ export default function App(props) {
   } else {
     return (
       <View style={styles.container}>
-        {<StatusBar barStyle="default" />}
+        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
           <Stack.Navigator>
             <Stack.Screen name="Root" component={BottomTabNavigator} />

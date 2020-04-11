@@ -58,14 +58,15 @@ export default function App(props) {
     loadResourcesAndDataAsync();
   }, []);
 
-
+  // Put below View
+  /*{Platform.OS === 'ios' && <StatusBar barStyle="default" />}*/
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return null;
   } else {
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+        {<StatusBar barStyle="default" />}
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
           <Stack.Navigator>
             <Stack.Screen name="Root" component={BottomTabNavigator} />

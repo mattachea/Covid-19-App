@@ -4,7 +4,20 @@ import { ScrollView } from "react-native-gesture-handler";
 import MyButton from "../components/MyButton";
 import { db } from "../config";
 
-var colors = ["#7ED551", "#EFCB34", "#E75351"];
+var colors = {
+  'ECMO': "#C73110", //red
+  'Cardiopulmonary_Arrest': "#C73110",
+  'Cardiovascular_Support': "#C73110",
+  'Hematology_and_Coagulation': "#C73110",
+  'Epidemiology': "#EFCB34", //yellow
+  'Pharmacological_Treatment': "#EFCB34",
+  'Renal_Support': "#1082C7", //blue
+  'Respiratory_Support': "#1082C7",
+  'Airway_Management': "#1082C7",
+  'Discharge': "#38B406", //green
+  'Imaging': "#38B406",
+  'Recognition': "#38B406",
+};
 
 export default function ClinicianScreen({ navigation }) {
   const [cprData, setData] = useState({});
@@ -26,13 +39,18 @@ export default function ClinicianScreen({ navigation }) {
 
   function createButtons() {
     let buttonList = [];
-    let i = 0;
-    Object.entries(cprData).map(([key, value]) => {
+    let cprDataArray = Object.entries(cprData);
+    cprDataArray = [
+      cprDataArray[5], cprDataArray[8], //yellow
+      cprDataArray[6], cprDataArray[2], cprDataArray[1], cprDataArray[4], //red
+      cprDataArray[0], cprDataArray[11], cprDataArray[10], //blue
+      cprDataArray[7], cprDataArray[9], cprDataArray[3] //green
+    ];
+    cprDataArray.map(([key, value]) => {
       let name = key.replace(/_/g, " ");
       buttonList.push(
-        <MyButton name={name} color={colors[i % 3]} data={key} key={key} content = {false} />
+        <MyButton name={name} color={colors[key]} data={key} key={key} content = {false} />
       );
-      i = i + 1;
     });
     return buttonList;
   }

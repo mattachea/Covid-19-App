@@ -1,8 +1,8 @@
 {
+  "urlRandomness": "gw-nka",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": "9d-9pt",
   "https": false
 }

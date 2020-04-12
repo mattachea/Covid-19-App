@@ -3,18 +3,47 @@ import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Video } from 'expo-av';
+import { db } from "../config";
+import { app } from "../config";
+import { storageRef } from "../config";
+
+
+//Log to local console for debugging
+function consoleLog(name) {
+	console.log(name);
+}
+
+var ventPicSrc; //source for vent picture
+function fetchQRGuidePic	() { //fetch quick reference guide picture
+  var imgPath = app.storage().ref('/images/QwikRefGuide/'); //google storage route
+  var ventRef = imgPath.child(name.split(' ').join('_') + "_Quick_Guide.png");//add name of ventilator
+  ventRef.getDownloadURL().then(function(url) {
+  ventPicSrc = url;
+
+  //debugging
+  consoleLog('linked ventPic');
+  consoleLog(ventPicSrc);
+});}
+
 
 export default function Ventilator({route}) {
   const { name } = route.params;
   const { data } = route.params;
 
+  //log info for debugging to console
+  consoleLog(name);
+  consoleLog(route);
+
+  fetchQRGuidePic();
+
   return (
     <View style = {styles.container}>
         <ScrollView>
           <Text style={styles.titleText}> {name + " Quick Reference Guide"} </Text>
+
           <Image
             style={{ width: 400, height: 400, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
-            source={require("../assets/images/" + name.split(' ').join('_') + "_Quick_Guide.png")}
+              source={require("../assets/images/" + name.split(' ').join('_') + "_Quick_Guide.png")}
           />
 
             <Text style={styles.subtitleText}></Text>

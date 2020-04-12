@@ -1,1 +1,10 @@
-{}
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 46375,
+  "expoServerNgrokUrl": "https://tv-ann.anonymous.covid-19-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.tv-ann.anonymous.covid-19-app.exp.direct",
+  "ngrokPid": 46385,
+  "webpackServerPort": 19006
+}

@@ -13,7 +13,7 @@ export default function Screen({ route, navigation }) {
   const [cprData, setData] = useState({});
 
   async function getData() {
-    const path = ''.concat("testing/", data);
+    const path = ''.concat("cpr/", data);
     try {
       const snapshot = await db.ref(path).once("value");
       let data = snapshot.val();

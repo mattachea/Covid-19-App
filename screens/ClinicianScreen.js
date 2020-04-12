@@ -11,7 +11,7 @@ export default function ClinicianScreen({ navigation }) {
 
   async function getData() {
     try {
-      const snapshot = await db.ref("testCategories/").once("value");
+      const snapshot = await db.ref("categories/").once("value");
       let data = snapshot.val();
       setData(data);
 

@@ -13,28 +13,21 @@ function consoleLog(name) {
 	console.log(name);
 }
 
+
+
 var ventPicSrc; //source for vent picture
-function fetchQRGuidePic	() { //fetch quick reference guide picture
-  var imgPath = app.storage().ref('/images/QwikRefGuide/'); //google storage route
-  var ventRef = imgPath.child(name.split(' ').join('_') + "_Quick_Guide.png");//add name of ventilator
-  ventRef.getDownloadURL().then(function(url) {
-  ventPicSrc = url;
-
-  //debugging
-  consoleLog('linked ventPic');
-  consoleLog(ventPicSrc);
-});}
-
 
 export default function Ventilator({route}) {
   const { name } = route.params;
   const { data } = route.params;
+  const namePath = (name.split(' ').join('_') + "_Quick_Guide.png");
 
   //log info for debugging to console
   consoleLog(name);
   consoleLog(route);
+  consoleLog(namePath);
 
-  fetchQRGuidePic();
+  fetchQRGuidePic(namePath);
 
   return (
     <View style = {styles.container}>
@@ -60,7 +53,19 @@ export default function Ventilator({route}) {
         </ScrollView>
     </View>
   );
-}
+} 
+
+
+function fetchQRGuidePic (namePath) { //fetch quick reference guide picture
+  var imgPath = app.storage().ref("/images/QwikRefGuide/"); //google storage route
+  var ventRef = imgPath.child(namePath);//add name of ventilator
+  ventRef.getDownloadURL().then(function(url) {
+  ventPicSrc = url;
+
+  //debugging
+  consoleLog('linked ventPic');
+  consoleLog(ventPicSrc);
+});}
 
 const styles = StyleSheet.create({
   container: {

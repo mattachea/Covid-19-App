@@ -29,6 +29,8 @@ export default function Ventilator({route}) {
 
   fetchQRGuidePic(namePath);
 
+
+//source={require("../assets/images/" + name.split(' ').join('_') + "_Quick_Guide.png")}
   return (
     <View style = {styles.container}>
         <ScrollView>
@@ -36,7 +38,8 @@ export default function Ventilator({route}) {
 
           <Image
             style={{ width: 400, height: 400, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
-              source={require("../assets/images/" + name.split(' ').join('_') + "_Quick_Guide.png")}
+            source={{uri: ventPicSrc}}
+
           />
 
             <Text style={styles.subtitleText}></Text>
@@ -53,7 +56,7 @@ export default function Ventilator({route}) {
         </ScrollView>
     </View>
   );
-} 
+}
 
 
 function fetchQRGuidePic (namePath) { //fetch quick reference guide picture

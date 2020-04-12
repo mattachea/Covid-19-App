@@ -13,14 +13,14 @@ export default function Ventilator({route}) {
         <ScrollView>
           <Text style={styles.titleText}> {name + " Quick Reference Guide"} </Text>
           <Image
-            style={{ width: 200, height: 300, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
-            source={require('../assets/images/ltv1200.png')}
+            style={{ width: 400, height: 400, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
+            source={require("../assets/images/" + name.split(' ').join('_') + "_Quick_Guide.png")}
           />
 
             <Text style={styles.subtitleText}></Text>
             <Text style={styles.subtitleText}>Tutorial Video</Text>
             <Video
-              source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+              source={{ uri: 'https://www.youtube.com/watch?v=zjlS9sScfRk' }}
               rate={1.0}
               volume={1.0}
               isMuted={false}

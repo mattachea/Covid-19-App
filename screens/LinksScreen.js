@@ -21,7 +21,6 @@ export default function LinksScreen() {
 Thank you for downloading the Covid-19 Pocket Reference App! {'\n'} {'\n'}
 This is intended to provide healthcare providers with easily accessible information during the COVID19 pandemic. 
 {'\n'}{'\n'}This app provide resources for clinicians on relevant up-to-date information of COVID19 and hospital protocols for PPE usage and ventilation. 
-{'\n'} {'\n'}The ventilation tab is intended as quick reference for those who have experience in ventilation (i.e. respiratory therapists, anesthesiologists) and as a step-by-step resource for inexperienced providers called upon to manage ventilated patients during the COVID crisis.
 
   </Text>
     </ScrollView>

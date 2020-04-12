@@ -23,9 +23,12 @@ export default function ResourcesScreen() {
       />
 
     <Text style={styles.subtitleText}>Feedback</Text> 
-      <Text style={styles.optionText}>
-        For suggestions, comments, or updates of the content, please contact:{'\n'}{'\n'}Sergio Navarette: snavarr@jhmi.edu {'\n'}Akbhar Herekar: ahereka1@jhmi.edu {'\n'}Stamatis Baronos: sbaraono2@jhmi.edu
-      </Text>
+    <OptionButton
+        icon="md-school"
+        label="Comments or suggestions"
+        onPress={() => WebBrowser.openBrowserAsync('https://docs.google.com/forms/d/e/1FAIpQLSeKC3seFS0pgsmH4vSkr8XCpzPq4VpmWTwzGGRDlL88krpy8g/viewform?usp=sf_link')}
+        isLastOption
+      />
     </ScrollView>
 
   )

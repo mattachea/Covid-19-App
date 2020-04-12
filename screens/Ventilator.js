@@ -2,10 +2,9 @@ import * as React from 'react';
 import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity, Dimensions, Animated} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Ionicons } from '@expo/vector-icons';
 import { Video } from 'expo-av';
 
-export default function TransmissionScreen({navigation}) {
+export default function Ventilator({navigation}) {
 
   return (
     <View style = {styles.container}>
@@ -13,7 +12,7 @@ export default function TransmissionScreen({navigation}) {
           <Text style={styles.titleText}> LTV-1200 Quick Reference Guide</Text>
           <Image
             style={{ width: 200, height: 300, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
-            source={require('../assets/images/LTV_1200_Quick_Guide.png')}
+            source={require('../assets/images/ltv1200.png')}
           />
 
             <Text style={styles.subtitleText}></Text>

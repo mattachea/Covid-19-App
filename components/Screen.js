@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import React, {useEffect, useState }  from "react";
+import {StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import MyButton from "../components/MyButton";
 import { db } from "../config";
 
-var colors = ["#7ED551", "#EFCB34", "#E75351"];
 
-export default function ClinicianScreen({ navigation }) {
+export default function Screen({ route, navigation }) {
+  const { name } = route.params;
+  const { data } = route.params;
+  const { color } = route.params;
+  
   const [cprData, setData] = useState({});
 
   async function getData() {
+    const path = ''.concat("testing/", data);
     try {
-      const snapshot = await db.ref("testCategories/").once("value");
+      const snapshot = await db.ref(path).once("value");
       let data = snapshot.val();
-      setData(data);
-
-      // console.log(data)
+      setData(data)
     } catch (e) {
       console.warn(e);
     }
@@ -28,12 +30,10 @@ export default function ClinicianScreen({ navigation }) {
     let buttonList = [];
     let i = 0;
     Object.entries(cprData).map(([key, value]) => {
-      let name = key.replace(/_/g, " ");
-      buttonList.push(
-        <MyButton name={name} color={colors[i % 3]} data={key} key={key} content = {false} />
-      );
-      i = i + 1;
-    });
+        let title = key.replace(/_/g, " ");
+        buttonList.push(<MyButton name={title} data = {value} color={color} key={key} content={true}/>);
+        i = i + 1;
+    })
     return buttonList;
   }
 
@@ -42,12 +42,8 @@ export default function ClinicianScreen({ navigation }) {
       <ScrollView style={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>
-            Clinician {"\n"} Pocket Reference
+            {name}
           </Text>
-          <Image
-            source={require("../assets/images/clinician.png")}
-            style={styles.titleImage}
-          />
           {createButtons()}
         </View>
       </ScrollView>

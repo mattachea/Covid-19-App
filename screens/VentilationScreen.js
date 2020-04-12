@@ -1,9 +1,7 @@
-import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Ionicons } from '@expo/vector-icons';
 
 
 export default function VentilationScreen({navigation}) {
@@ -16,7 +14,7 @@ export default function VentilationScreen({navigation}) {
     </Text>
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => navigation.navigate('Vent1')}
+            onPress={() => navigation.navigate('Ventilator')}
           >
             <Image 
               source={require('../assets/images/ltv1200.png')}
@@ -26,7 +24,7 @@ export default function VentilationScreen({navigation}) {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => navigation.navigate('Vent2')}
+            onPress={() => navigation.navigate('Ventilator')}
           >
             <Image 
               source={require('../assets/images/servou.png')}
@@ -37,7 +35,7 @@ export default function VentilationScreen({navigation}) {
 
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => navigation.navigate('Vent3')}
+            onPress={() => navigation.navigate('Ventilator')}
           >
             <Image 
               source={require('../assets/images/hamiltong5.png')}
@@ -48,7 +46,7 @@ export default function VentilationScreen({navigation}) {
 
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => navigation.navigate('Vent4')}
+            onPress={() => navigation.navigate('Ventilator')}
           >
             <Image 
               source={require('../assets/images/PB.png')}

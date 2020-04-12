@@ -11,15 +11,14 @@ import useLinking from "./navigation/useLinking";
 import HomeScreen from "./screens/HomeScreen";
 import ClinicianScreen from "./screens/ClinicianScreen";
 
-
-import VentilationScreen from "./screens/VentilationScreen";
 import PPEScreen from "./screens/PPEScreen";
 import ResourcesScreen from "./screens/ResourcesScreen";
 
-import Ventilator from "./screens/Ventilator";
 import Screen from "./components/Screen";
-import ContentScreen from "./components/ContentScreen"
+import ContentScreen from "./components/ContentScreen";
 
+import VentilationScreen from "./components/VentilationScreen";
+import Ventilator from "./components/Ventilator";
 
 const Stack = createStackNavigator();
 
@@ -99,13 +98,6 @@ export default function App(props) {
               }}
             />
             <Stack.Screen
-              name="Ventilator"
-              component={Ventilator}
-              options={{
-                title: null,
-              }}
-            />
-            <Stack.Screen
               name="Subscreen"
               component={Screen}
               options={{
@@ -115,6 +107,20 @@ export default function App(props) {
             <Stack.Screen
               name="Contentscreen"
               component={ContentScreen}
+              options={{
+                title: null,
+              }}
+            />
+            <Stack.Screen
+              name="Ventscreen"
+              component={VentilationScreen}
+              options={{
+                title: null,
+              }}
+            />
+            <Stack.Screen
+              name="Ventilator"
+              component={Ventilator}
               options={{
                 title: null,
               }}

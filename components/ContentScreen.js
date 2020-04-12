@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
     marginBottom: 20,
+    padding: 20
   },
   titleText: {
     marginTop: 30,

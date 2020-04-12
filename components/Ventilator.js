@@ -4,12 +4,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Video } from 'expo-av';
 
-export default function Ventilator({navigation}) {
+export default function Ventilator({route}) {
+  const { name } = route.params;
+  const { data } = route.params;
 
   return (
     <View style = {styles.container}>
         <ScrollView>
-          <Text style={styles.titleText}> LTV-1200 Quick Reference Guide</Text>
+          <Text style={styles.titleText}> {name + " Quick Reference Guide"} </Text>
           <Image
             style={{ width: 200, height: 300, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
             source={require('../assets/images/ltv1200.png')}

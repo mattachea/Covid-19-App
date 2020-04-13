@@ -16,7 +16,7 @@ export default function HomeScreen({navigation}) {
             style={styles.titleImage}
           />
           <Text style={styles.titleText}>
-            Covid-19 {"\n"}Pocket Reference
+            COVID-19 {"\n"}Pocket Reference
           </Text>
 
           <View style={styles.buttonContainer}>

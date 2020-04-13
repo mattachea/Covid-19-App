@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 64923,
+  "expoServerNgrokUrl": "https://zy-pkr.anonymous.covid-19-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.zy-pkr.anonymous.covid-19-app.exp.direct",
+  "ngrokPid": 64935,
   "webpackServerPort": null
 }

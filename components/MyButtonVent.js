@@ -4,15 +4,15 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 export default function MyButtonVent(props) {
   const navigation = useNavigation();
- 
+
   return (
     <TouchableOpacity
       style={[{ backgroundColor: props.color }, styles.buttonStyle]}
       onPress={() => {
             navigation.navigate('Ventilator', {
-                name: props.name, 
+                name: props.name,
                 data: props.data,
-            });        
+            });
 
         }
       }
@@ -40,5 +40,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     color: "#FFFFFF",
     fontSize: 24,
+    fontFamily: "Avenir-roman",
+    textAlign: "center",
+    lineHeight: 28,
   },
 });

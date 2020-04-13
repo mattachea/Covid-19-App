@@ -29,7 +29,7 @@ export default function Ventilator({route}) {
 
   fetchQRGuidePic(namePath);
 
-
+//source={{uri: ventPicSrc}} -->proper method of doing this but issues due to async
 //source={require("../assets/images/" + name.split(' ').join('_') + "_Quick_Guide.png")}
   return (
     <View style = {styles.container}>
@@ -38,12 +38,15 @@ export default function Ventilator({route}) {
 
           <Image
             style={{ width: 400, height: 400, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
-            source={{uri: ventPicSrc}}
+            source={{uri: "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FQwikRefGuide%2F"+namePath+"?alt=media&token=1cdcded1-d887-412e-b632-62a4dc92b3bc"}}
 
           />
 
             <Text style={styles.subtitleText}></Text>
             <Text style={styles.subtitleText}>Tutorial Video</Text>
+						<center>
+						<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zjlS9sScfRk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</center>
             <Video
               source={{ uri: 'https://www.youtube.com/watch?v=zjlS9sScfRk' }}
               rate={1.0}

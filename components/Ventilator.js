@@ -29,6 +29,10 @@ export default function Ventilator({route}) {
 
   fetchQRGuidePic(namePath);
 
+  /*						<center>
+						<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zjlS9sScfRk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</center>*/
+
 //source={{uri: ventPicSrc}} -->proper method of doing this but issues due to async
 //source={require("../assets/images/" + name.split(' ').join('_') + "_Quick_Guide.png")}
   return (
@@ -44,9 +48,6 @@ export default function Ventilator({route}) {
 
             <Text style={styles.subtitleText}></Text>
             <Text style={styles.subtitleText}>Tutorial Video</Text>
-						<center>
-						<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zjlS9sScfRk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</center>
             <Video
               source={{ uri: 'https://www.youtube.com/watch?v=zjlS9sScfRk' }}
               rate={1.0}

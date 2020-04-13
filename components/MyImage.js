@@ -2,29 +2,12 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-export default function MyButton(props) {
-  const navigation = useNavigation();
- 
+export default function MyImage(props) { 
   return (
-    <TouchableOpacity
-      style={[{ backgroundColor: props.color }, styles.buttonStyle]}
-      onPress={() => {
-        if (props.content) {
-            navigation.navigate('Contentscreen', {
-                name: props.name, 
-                data: props.data,
-            });        
-        } else {
-            navigation.navigate('Subscreen', {
-                name: props.name, 
-                data: props.data, 
-                color: props.color
-        });
-        }
-      }}
-    >
-      <Text style={styles.buttonText}>{props.name}</Text>
-    </TouchableOpacity>
+    <Image 
+      style={{ width: 400, height: 400, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}} 
+      source={{uri: props.url}}
+    />
   );
 }
 

@@ -39,19 +39,18 @@ export default function ClinicianScreen({ navigation }) {
 
   function createButtons() {
     let buttonList = [];
-    let cprDataArray = Object.entries(cprData);
-    cprDataArray = [
-      cprDataArray[5], cprDataArray[8], //yellow
-      cprDataArray[6], cprDataArray[2], cprDataArray[1], cprDataArray[4], //red
-      cprDataArray[0], cprDataArray[11], cprDataArray[10], //blue
-      cprDataArray[7], cprDataArray[9], cprDataArray[3] //green
-    ];
-    cprDataArray.map(([key, value]) => {
+    Object.entries(cprData).map(([key, value]) => {
       let name = key.replace(/_/g, " ");
       buttonList.push(
         <MyButton name={name} color={colors[key]} data={key} key={key} content = {false} />
       );
     });
+    buttonList = [ //custom button order
+      buttonList[5], buttonList[8], //yellow
+      buttonList[6], buttonList[2], buttonList[1], buttonList[4], //red
+      buttonList[0], buttonList[11], buttonList[10], //blue
+      buttonList[7], buttonList[9], buttonList[3] //green
+    ];
     return buttonList;
   }
 

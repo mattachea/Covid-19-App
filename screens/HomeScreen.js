@@ -24,7 +24,7 @@ export default function HomeScreen({navigation}) {
             style={styles.buttonStyle}
             onPress={() => navigation.navigate('Clinician Pocket Reference')}
           >
-            <Image 
+            <Image
               source={require('../assets/images/clinician.png')}
               style={styles.buttonIcon}
               />
@@ -35,7 +35,7 @@ export default function HomeScreen({navigation}) {
             style={styles.buttonStyle}
             onPress={() => navigation.navigate('Ventilation')}
           >
-            <Image 
+            <Image
               source={require('../assets/images/ventilator.png')}
               style={styles.buttonIcon}
             />
@@ -46,7 +46,7 @@ export default function HomeScreen({navigation}) {
             style={styles.buttonStyle}
             onPress={() => navigation.navigate('PPE')}
           >
-            <Image 
+            <Image
               source={require('../assets/images/PPE.png')}
               style={styles.buttonIcon}
               />
@@ -60,10 +60,11 @@ export default function HomeScreen({navigation}) {
             <Ionicons
               name={"md-information-circle-outline"}
               size={30}
-              style={{marginLeft: 0}}
+              style={styles.buttonIcon}
+              style= {{marginLeft: 32}}
             />
             <Text style={styles.buttonText}>Resources</Text>
-          </TouchableOpacity>  
+          </TouchableOpacity>
 
           </View>
         </View>
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
   },
   buttonIcon:{
+    marginLeft: 25,
     width:40,
     height:40,
     resizeMode: 'contain',
@@ -94,20 +96,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginVertical: 8,
     alignItems:'center',
-    justifyContent:'center',
+    justifyContent:'flex-start',
     width:300,
     height:70,
     backgroundColor: '#f2f2f2',
     borderRadius:20,
     shadowColor: 'rgba(0,0,0, .4)', // IOS
     shadowOffset: { height: 1, width: 0 }, // IOS
-    shadowOpacity: 1, // IOS 
+    shadowOpacity: 1, // IOS
     shadowRadius: 1, //IOS
     elevation: 1, // Android
   },
   buttonText: {
     fontSize: 20,
-    marginLeft: 20
+    marginLeft: 20,
+    textAlign: 'center',
   },
   contentContainer: {
     paddingTop: 0,

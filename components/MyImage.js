@@ -2,10 +2,10 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-export default function MyImage(props) { 
+export default function MyImage(props) {
   return (
-    <Image 
-      style={{ width: 400, height: 400, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}} 
+    <Image
+      style={{ width: 400, height: 400, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
       source={{uri: props.url}}
     />
   );

@@ -38,7 +38,7 @@ export default function Ventilator({route}) {
 
           <Image
             style={{ width: 400, height: 400, alignSelf: 'center', margin: 10, transform: [{ scale: 1 }]}}
-            source={{uri: ventPicSrc}}
+            source={{uri: "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FQwikRefGuide%2F"+namePath+"?alt=media&token=1cdcded1-d887-412e-b632-62a4dc92b3bc"}}
 
           />
 

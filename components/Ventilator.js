@@ -29,7 +29,7 @@ export default function Ventilator({route}) {
 
   fetchQRGuidePic(namePath);
 
-
+//source={{uri: ventPicSrc}} -->proper method of doing this but issues due to async
 //source={require("../assets/images/" + name.split(' ').join('_') + "_Quick_Guide.png")}
   return (
     <View style = {styles.container}>

@@ -14,7 +14,7 @@ import ClinicianScreen from "./screens/ClinicianScreen";
 import PPEScreen from "./screens/PPEScreen";
 import ResourcesScreen from "./screens/ResourcesScreen";
 
-import Screen from "./components/Screen";
+import ButtonScreen from "./components/ButtonScreen";
 import ContentScreen from "./components/ContentScreen";
 
 import VentilationScreen from "./components/VentilationScreen";
@@ -110,8 +110,8 @@ export default function App(props) {
               }}
             />
             <Stack.Screen
-              name="Subscreen"
-              component={Screen}
+              name="Buttonscreen"
+              component={ButtonScreen}
               options={{
                 title: null,
               }}

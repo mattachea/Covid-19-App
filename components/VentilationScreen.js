@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import MyButtonVent from "./MyButtonVent";
+import MyButton from "../components/MyButton";
 import { db } from "../config";
 
 var colors = ["#7ED551", "#EFCB34", "#E75351"];
@@ -30,7 +30,9 @@ export default function VentilationScreen({ navigation }) {
     Object.entries(cprData).map(([key, value]) => {
       let name = key.replace(/_/g, " ");
       buttonList.push(
-        <MyButtonVent name={name} color={colors[i % 3]} data={key} key={key} />
+        // <MyButtonVent name={name} color={colors[i % 3]} data={key} key={key} />
+        <MyButton name={name} color={colors[i % 3]} data={key} key={key} content = 'Ventilator'/>
+
       );
       i = i + 1;
     });

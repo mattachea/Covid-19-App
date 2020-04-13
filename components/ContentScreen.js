@@ -28,7 +28,7 @@ export default function ContentScreen({ route }) {
         objectsList.push(textObject2);
       });
     } else {
-      let textObject = <Text style = {styles.text}>{data}</Text>;
+      let textObject = <Text key='1' style = {styles.text}>{data}</Text>;
       objectsList.push(textObject);
     }
     return objectsList;
@@ -81,12 +81,10 @@ const styles = StyleSheet.create({
     padding: 20
   },
   titleText: {
-    marginTop: 30,
     marginBottom: 30,
     fontSize: 36,
     textAlign: "center",
     fontFamily:"Avenir-roman",
-
   },
   titleImage: {
     width: 150,
@@ -94,6 +92,8 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   text: {
-      fontSize: 16,
+      fontSize: 18,
+      fontFamily:"Avenir-roman",
+
   }
 });

@@ -9,17 +9,27 @@ export default function MyButton(props) {
     <TouchableOpacity
       style={[{ backgroundColor: props.color }, styles.buttonStyle]}
       onPress={() => {
-        if (props.content) {
-            navigation.navigate('Contentscreen', {
-                name: props.name,
-                data: props.data,
+        switch (props.content) {
+          case "Contentscreen":
+            navigation.navigate("Contentscreen", {
+              name: props.name,
+              data: props.data,
             });
-        } else {
-            navigation.navigate('Subscreen', {
-                name: props.name,
-                data: props.data,
-                color: props.color
-        });
+            break;
+          case "Buttonscreen":
+            navigation.navigate("Buttonscreen", {
+              name: props.name,
+              data: props.data,
+              color: props.color,
+            });
+            break;
+          case "Ventilator":
+            navigation.navigate("Ventilator", {
+              name: props.name,
+              data: props.data,
+              color: props.color,
+            });
+            break;
         }
       }}
     >
@@ -47,6 +57,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     paddingHorizontal: 20,
+    paddingTop: 10,
     color: "#FFFFFF",
     fontSize: 24,
     fontFamily: "Avenir-roman",

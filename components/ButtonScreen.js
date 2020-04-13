@@ -1,11 +1,11 @@
 import React, {useEffect, useState }  from "react";
 import {StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import MyButton from "../components/MyButton";
+import MyButton from "./MyButton";
 import { db } from "../config";
 
 
-export default function Screen({ route, navigation }) {
+export default function ButtonScreen({ route, navigation }) {
   const { name } = route.params;
   const { data } = route.params;
   const { color } = route.params;
@@ -31,7 +31,7 @@ export default function Screen({ route, navigation }) {
     let i = 0;
     Object.entries(cprData).map(([key, value]) => {
         let title = key.replace(/_/g, " ");
-        buttonList.push(<MyButton name={title} data = {value} color={color} key={key} content={true}/>);
+        buttonList.push(<MyButton name={title} data = {value} color={color} key={key} content='Contentscreen'/>);
         i = i + 1;
     })
     return buttonList;

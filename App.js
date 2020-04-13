@@ -41,6 +41,18 @@ export default function App(props) {
         await Font.loadAsync({
           ...Ionicons.font,
           "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf"),
+           //Google FiraSans
+          "FiraSans-italic": require("./assets/fonts/FiraSans-Italic.ttf"),
+          "FiraSans-regular": require("./assets/fonts/FiraSans-Regular.ttf"),
+          "FiraSans-boldItalic": require("./assets/fonts/FiraSans-BoldItalic.ttf"),
+          "FiraSans-bold": require("./assets/fonts/FiraSans-Bold.ttf"),
+          "FiraSans-medium": require("./assets/fonts/FiraSans-Medium.ttf"),
+          "FiraSans-mediumItalic": require("./assets/fonts/FiraSans-MediumItalic.ttf"),
+          //Avenir Fonts
+          "Avenir-black": require("./assets/fonts/AvenirLTStd-Black.otf"), //avenir fonts
+          "Avenir-book": require("./assets/fonts/AvenirLTStd-Book.otf"), //avenir fonts
+          "Avenir-roman": require("./assets/fonts/AvenirLTStd-Roman.otf"), //avenir fonts
+
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service

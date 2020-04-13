@@ -4,20 +4,20 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 export default function MyButton(props) {
   const navigation = useNavigation();
- 
+
   return (
     <TouchableOpacity
       style={[{ backgroundColor: props.color }, styles.buttonStyle]}
       onPress={() => {
         if (props.content) {
             navigation.navigate('Contentscreen', {
-                name: props.name, 
+                name: props.name,
                 data: props.data,
-            });        
+            });
         } else {
             navigation.navigate('Subscreen', {
-                name: props.name, 
-                data: props.data, 
+                name: props.name,
+                data: props.data,
                 color: props.color
         });
         }
@@ -42,10 +42,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 1, // IOS
     shadowRadius: 1, //IOS
     elevation: 1, // Android
+    fontFamily: "Avenir-roman",
+    textAlign: "center",
   },
   buttonText: {
     paddingHorizontal: 20,
     color: "#FFFFFF",
     fontSize: 24,
+    fontFamily: "Avenir-roman",
+    textAlign: "center",
+    lineHeight: 28,
   },
 });

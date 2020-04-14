@@ -28,11 +28,9 @@ export default function ButtonScreen({ route, navigation }) {
 
   function createButtons() {
     let buttonList = [];
-    let i = 0;
     Object.entries(cprData).map(([key, value]) => {
         let title = key.replace(/_/g, " ");
         buttonList.push(<MyButton name={title} data = {value} color={color} key={key} content='Contentscreen'/>);
-        i = i + 1;
     })
     return buttonList;
   }

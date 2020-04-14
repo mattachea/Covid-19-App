@@ -66,21 +66,21 @@ export default function App(props) {
     loadResourcesAndDataAsync();
   }, []);
 
-  Platform.OS === "ios" && <StatusBar barStyle="default" />;
+  //Platform.OS === "ios" && <StatusBar barStyle="default" />;
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return null;
   } else {
     return (
       <View style={styles.container}>
-        {<StatusBar barStyle="default" />}
+        <StatusBar barStyle="default"/>
         <NavigationContainer
           ref={containerRef}
           initialState={initialNavigationState}
         >
           <Stack.Navigator>
             <Stack.Screen name="Root" component={BottomTabNavigator} />
-            {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+            <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen
               name="Clinician Pocket Reference"
               component={ClinicianScreen}

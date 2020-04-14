@@ -137,6 +137,7 @@ export default function App(props) {
                 title: null,
               }}
             />
+            
           </Stack.Navigator>
         </NavigationContainer>
       </View>

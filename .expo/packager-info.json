@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://tn-j8w.anonymous.mattcovid.exp.direct",
+  "packagerNgrokUrl": "https://packager.tn-j8w.anonymous.mattcovid.exp.direct",
+  "ngrokPid": 59144
 }

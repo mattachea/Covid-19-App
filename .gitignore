@@ -8,8 +8,8 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
-.expo
+
 # macOS
 .DS_Store
-.expo
-node_modules
+#.expo
+#node_modules

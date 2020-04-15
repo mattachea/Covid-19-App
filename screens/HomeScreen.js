@@ -44,13 +44,13 @@ export default function HomeScreen({navigation}) {
 
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => navigation.navigate('PPE')}
+            onPress={() => navigation.navigate('Video Tutorials')}
           >
             <Image
               source={require('../assets/images/PPE.png')}
               style={styles.buttonIcon}
               />
-            <Text style={styles.buttonText}>PPE Usage</Text>
+            <Text style={styles.buttonText}>Video Tutorials</Text>
           </TouchableOpacity>
 
           <TouchableOpacity

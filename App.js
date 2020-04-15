@@ -11,7 +11,7 @@ import useLinking from "./navigation/useLinking";
 import HomeScreen from "./screens/HomeScreen";
 import ClinicianScreen from "./screens/ClinicianScreen";
 
-import PPEScreen from "./screens/PPEScreen";
+import VideoTutorialsScreen from "./screens/VideoTutorialsScreen";
 import ResourcesScreen from "./screens/ResourcesScreen";
 
 import ButtonScreen from "./components/ButtonScreen";
@@ -96,8 +96,8 @@ export default function App(props) {
               }}
             />
             <Stack.Screen
-              name="PPE"
-              component={PPEScreen}
+              name="Video Tutorials"
+              component={VideoTutorialsScreen}
               options={{
                 title: null,
               }}

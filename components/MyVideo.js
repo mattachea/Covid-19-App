@@ -1,19 +1,17 @@
 import React, {useRef, useState} from 'react';
 import { View } from "react-native";
-import { Video } from 'expo-av';
 import YoutubePlayer from 'react-native-youtube-iframe';
 
 export default function MyVideo(props) {
   const playerRef = useRef(null);
   const [playing, setPlaying] = useState(true);
-  const nada = props.video;
   return (
     <View style={{ paddingTop: 60 }}>
       <YoutubePlayer
         ref={playerRef}
         height={300}
         width={400}
-        videoId={"qG2KNxODxHI"}
+        videoId={props.video}
         play={playing}
         onChangeState={event => console.log(event)}   
         onReady={() => console.log("ready")}

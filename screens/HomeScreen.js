@@ -21,40 +21,40 @@ export default function HomeScreen({navigation}) {
 
           <View style={styles.buttonContainer}>
           <TouchableOpacity
-            style={styles.buttonStyle}
+            style={styles.buttonStyle1}
             onPress={() => navigation.navigate('Clinician Pocket Reference')}
           >
             <Image
               source={require('../assets/images/clinician.png')}
               style={styles.buttonIcon}
               />
-            <Text style={styles.buttonText}>Clinician Reference</Text>
+            <Text style={styles.buttonText1}>Clinician Reference</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.buttonStyle}
+            style={styles.buttonStyle2}
             onPress={() => navigation.navigate('Ventilation')}
           >
             <Image
               source={require('../assets/images/ventilator.png')}
               style={styles.buttonIcon}
             />
-            <Text style={styles.buttonText}>Ventilation</Text>
+            <Text style={styles.buttonText2}>Ventilation</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.buttonStyle}
+            style={styles.buttonStyle1}
             onPress={() => navigation.navigate('Tutorscreen')}
           >
             <Image
               source={require('../assets/images/PPE.png')}
               style={styles.buttonIcon}
               />
-            <Text style={styles.buttonText}>Video Tutorials</Text>
+            <Text style={styles.buttonText1}>Video Tutorials</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.buttonStyle}
+            style={styles.buttonStyle2}
             onPress={() => navigation.navigate('Resources')}
           >
             <Ionicons
@@ -63,7 +63,7 @@ export default function HomeScreen({navigation}) {
               style={styles.buttonIcon}
               style= {{marginLeft: 32}}
             />
-            <Text style={styles.buttonText}>Resources</Text>
+            <Text style={styles.buttonText2}>Resources</Text>
           </TouchableOpacity>
 
           </View>
@@ -92,14 +92,14 @@ const styles = StyleSheet.create({
     height:40,
     resizeMode: 'contain',
   },
-  buttonStyle: {
+  buttonStyle1: {
     flexDirection: 'row',
     marginVertical: 8,
     alignItems:'center',
     justifyContent:'flex-start',
     width:300,
     height:70,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#1082C7',
     borderRadius:20,
     shadowColor: 'rgba(0,0,0, .4)', // IOS
     shadowOffset: { height: 1, width: 0 }, // IOS
@@ -107,7 +107,29 @@ const styles = StyleSheet.create({
     shadowRadius: 1, //IOS
     elevation: 1, // Android
   },
-  buttonText: {
+  buttonStyle2: {
+    flexDirection: 'row',
+    marginVertical: 8,
+    alignItems:'center',
+    justifyContent:'flex-start',
+    width:300,
+    height:70,
+    backgroundColor: '#EFCB34',
+    borderRadius:20,
+    shadowColor: 'rgba(0,0,0, .4)', // IOS
+    shadowOffset: { height: 1, width: 0 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    elevation: 1, // Android
+  },
+  buttonText1: {
+    color: 'white',
+    fontSize: 20,
+    marginLeft: 20,
+    textAlign: 'center',
+  },
+  buttonText2: {
+    color: 'black',
     fontSize: 20,
     marginLeft: 20,
     textAlign: 'center',

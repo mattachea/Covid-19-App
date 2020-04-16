@@ -36,7 +36,7 @@ export default function Ventilator({route}) {
         case "video":
           componentsList.push(
             <View key={k++} style={styles.contentContainer}>
-              <MyVideo/>
+              <MyVideo video={value.content}/>
             </View>
           );
         break;

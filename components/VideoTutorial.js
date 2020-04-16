@@ -1,19 +1,20 @@
-import * as React from 'react';
+import React, { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import MyVideo from "../components/MyVideo";
+import { db } from "../config";
 
 export default function VideoTutorial({route}) {
   const { name } = route.params;
   const { data } = route.params;
 
-  /*const [data, setData] = useState({});
+  const [videoData, setData] = useState({});
 
   async function getData() {
     try {
-      const snapshot = await db.ref("tutorials/").once("value");
-      let data = snapshot.val();
-      setData(data);
+      const snapshot = await db.ref("video_tutorial/tutorials/" + data).once("value");
+      let snap = snapshot.val();
+      setData(snap);
 
       // console.log(data)
     } catch (e) {
@@ -22,18 +23,18 @@ export default function VideoTutorial({route}) {
   }
   useEffect(() => {
     getData();
-  }, []);*/
+  }, []);
 
   function createObjects() {
     let k = 0; //for unique keys to get rid of warnings
 
     let componentsList = [];
-    Object.entries(data).map(([key, value]) => {
+    Object.entries(videoData).map(([key, value]) => {
       switch (value.type) {
         case "video":
           componentsList.push(
             <View key={k++} style={styles.contentContainer}>
-              <Text>Video Placeholder</Text>
+              <MyVideo video={value.content}/>
             </View>
           );
         break;

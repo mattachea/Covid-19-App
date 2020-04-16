@@ -9,11 +9,12 @@ export default function VideoTutorialsScreen({navigation}) {
 
   async function getData() {
     try {
-      const snapshot = await db.ref("Tutorial_Categories/").once("value");
+      const snapshot = await db.ref('video_tutorial/Tutorial_Categories/').once("value");
       let data = snapshot.val();
       setData(data);
 
-      console.log(data);
+      //console.log(data);
+
     } catch (e) {
       console.warn(e);
     }
@@ -22,17 +23,13 @@ export default function VideoTutorialsScreen({navigation}) {
     getData();
   }, []);
 
-  //const videoData = allData["tutorials"];
-  //const tutorData = allData["Tutorial_Categories"];
-  //data={videoData}
-
   function createButtons() {
     let buttonList = new Array(Object.keys(tutorData).length);
     Object.entries(tutorData).map(([key, value]) => {
       let name = key.replace(/_/g, " ");
       buttonList[value.order] =  
-        <MyButton name={name} color={value.color} key={key} content='Video Tutorial' />
-      
+        <MyButton name={name} color={value.color} key={key} data={key} content='Video Tutorial' />
+        
     });
     return buttonList;
   }

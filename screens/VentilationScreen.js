@@ -13,7 +13,6 @@ export default function VentilationScreen({ navigation }) {
       let data = snapshot.val();
       setData(data);
 
-      // console.log(data)
     } catch (e) {
       console.warn(e);
     }

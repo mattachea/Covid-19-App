@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import PropTypes from "prop-types";
 import { ScrollView, RectButton } from "react-native-gesture-handler";
 import * as WebBrowser from "expo-web-browser";
+import MyImage from './MyImage';
 
 export default class Accordion extends Component {
   // Specifies the default values for props:
@@ -70,21 +71,16 @@ export default class Accordion extends Component {
           case "subCheckbox":
             bulletPoint(value, 20); //need to actually implement checkboxes later
             break;
-          case "image":
-            componentsList.push(
-              <View key={k++} style={styles.contentContainer}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FCPRImages%2F" +
-                      value.content +
-                      "?alt=media&token=9b535aac-9275-4cfa-b4f3-552010ab594b",
-                  }}
-                />
-              </View>
-            );
-            break;
+            case "image":
+              let uri = "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FCPRImages%2F" +
+                value.content +
+                "?alt=media&token=9b535aac-9275-4cfa-b4f3-552010ab594b";
+              componentsList.push(
+                <View key={k++} style={styles.contentContainer}>
+                  <MyImage uri={uri}/>
+                </View>
+              );
+              break;
           case "url":
             componentsList.push(
               <View key={k++}>
@@ -116,7 +112,6 @@ export default class Accordion extends Component {
       });
       return componentsList;
     }
-
     return (
       <View>
         <TouchableOpacity
@@ -173,20 +168,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#bcf2a0",
     padding: 16,
   },
-  image: {
-    flex: 1,
-    width: "100%",
-    height: undefined,
-    aspectRatio: 1,
-    resizeMode: "contain",
-  },
   text: {
     fontSize: 18,
     fontFamily: "Avenir-roman",
   },
   contentContainer: {
     flex: 1,
-    padding: 10,
+    padding: 0,
   },
   optionIconContainer: {
     marginRight: 12,

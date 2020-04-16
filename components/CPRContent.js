@@ -51,6 +51,9 @@ export default function CPRContent({ route }) {
         case "subBullet":
           bulletPoint(value, 20);
           break;
+        case "subsubBullet":
+          bulletPoint(value, 40);
+          break;
         case "mainCheckbox":
           bulletPoint(value, 0); //need to actually implement checkboxes later
           break;
@@ -58,12 +61,14 @@ export default function CPRContent({ route }) {
           bulletPoint(value, 20); //need to actually implement checkboxes later
           break;
         case "image":
-          let uri = "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FCPRImages%2F" +
+          let uri =
+            "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FCPRImages%2F" +
             value.content +
             "?alt=media&token=9b535aac-9275-4cfa-b4f3-552010ab594b";
           componentsList.push(
             <View key={k++} style={styles.contentContainer}>
-              <MyImage uri={uri}/>
+              <MyImage uri={uri} />
+              {/* <Text> {uri}</Text> */}
             </View>
           );
           break;
@@ -141,8 +146,8 @@ const styles = StyleSheet.create({
     fontFamily: "Avenir-roman",
   },
   contentContainer: {
-    flex: 1,
-    padding: 10,
+    // flex: 1,
+    alignContent: 'center',
   },
   optionIconContainer: {
     marginRight: 12,

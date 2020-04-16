@@ -1,35 +1,44 @@
 import React from 'react';
-import { Image, Dimensions, StyleSheet, View } from 'react-native';
+import { Image, Dimensions, StyleSheet, View, Modal } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 
-export default function MyImage(props) {
-  let cropHeight = Dimensions.get('window').height;
-  let cropWidth = Dimensions.get('window').width;
-  return (
-    <View>
-      <ImageZoom cropWidth={cropWidth}
-        cropHeight={cropHeight}
-        imageWidth={500}
-        imageHeight={500}>
 
+let windowHeight = Dimensions.get('window').height;
+let windowWidth = Dimensions.get('window').width;
+export default function MyImage(props) {
+
+  return (
+    <View styles = {styles.container}>
+      <ImageZoom cropWidth={windowWidth}
+        cropHeight={windowHeight}
+        imageWidth={windowWidth}
+        imageHeight={windowHeight}>
         <Image
           style={styles.image}
           source={{
             uri: props.uri,
           }}
         /> 
-
       </ImageZoom>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    // width: 500,
+    // height:300
+    // justifyContent: 'center',
+    // alignItems: 'center',
+  },
   image: {
     flex: 1,
-    width: 500,
-    height: undefined,
-    aspectRatio: 1,
+    // width: windowWidth,
+    // height: undefined,
+    // aspectRatio: 1,
+    // margin: 20,
+    // alignItems: 'center',
     resizeMode: "contain",
   },
 });

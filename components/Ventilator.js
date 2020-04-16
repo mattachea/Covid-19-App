@@ -24,7 +24,7 @@ export default function Ventilator({route}) {
             value.content +
             "?alt=media&token=1cdcded1-d887-412e-b632-62a4dc92b3bc";
           componentsList.push(
-            <View key={k++} style={styles.contentContainer}>
+            <View key={k++}>
               <MyImage uri={uri}/>
             </View>
           );
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     alignItems: "center",
-    margin: 20,
+    marginHorizontal: 20,
+    marginTop: 20,
   },
   titleText: {
     fontSize: 36,
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    margin: 3.5,
+    // margin: 3.5,
   },
 });
 

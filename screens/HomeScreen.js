@@ -1,5 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
-import * as React from 'react';
+import React, { useEffect, useState } from "react";
 import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -86,10 +86,10 @@ export default function HomeScreen({navigation}) {
             <Text style={styles.buttonText3}>Resources</Text>
           </TouchableOpacity>
 
-            <View style={styles.contentContainer}>
-            <Text styles={styles.titleText}>{timeData}</Text>
-            
-            </View>
+          <View style={styles.contentContainer}>
+          <Text style={styles.timeText}>{timeData}</Text>
+          </View>
+
           </View>
         </View>
       </ScrollView>

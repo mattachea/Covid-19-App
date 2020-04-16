@@ -22,6 +22,33 @@ export default function ResourcesScreen() {
         isLastOption
       />
 
+      <OptionButton
+              icon="md-school"
+              label="Hopkins Training Journal Clubs"
+              onPress={() => WebBrowser.openBrowserAsync('http://anesthesiology.hopkinsmedicine.org/adult-critical-care/adult-critical-care-fellowship/covid-journal-clubs/')}
+              isLastOption
+            />
+
+            <OptionButton
+              icon="md-school"
+              label="Hopkins COVID-ED"
+              onPress={() => WebBrowser.openBrowserAsync('https://livejohnshopkins.sharepoint.com/sites/COVID-ED/SitePages/ICU-IMC-Training-%26-Resources.aspx')}
+              isLastOption
+            />
+
+            <OptionButton
+              icon="md-school"
+              label="Coronavirus Resources Center"
+              onPress={() => WebBrowser.openBrowserAsync('https://coronavirus.jhu.edu/')}
+              isLastOption
+            />
+
+            <OptionButton
+              icon="md-school"
+              label="ICU Training for Non-ICU Physicians"
+              onPress={() => WebBrowser.openBrowserAsync('https://covid19.sccm.org/')}
+              isLastOption
+            />
     <Text style={styles.subtitleText}>Feedback</Text> 
     <OptionButton
         icon="md-school"

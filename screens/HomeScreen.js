@@ -4,9 +4,29 @@ import { Image, Button, Platform, StyleSheet, Text, View, Alert, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
-
+import { db } from "../config";
+import { data } from '../App';
 
 export default function HomeScreen({navigation}) {
+
+   // To get time from Firebase:
+   const [timeData, setData] = useState({});
+
+   async function getData() {
+     try {
+       const snapshot = await db.ref("Update_Time/").once("value");
+       let data = snapshot.val();
+       setData(data);
+ 
+     console.log(data)
+     } catch (e) {
+       console.warn(e);
+     }
+   }
+   useEffect(() => {
+     getData();
+   }, []);
+
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -66,6 +86,10 @@ export default function HomeScreen({navigation}) {
             <Text style={styles.buttonText3}>Resources</Text>
           </TouchableOpacity>
 
+            <View style={styles.contentContainer}>
+            <Text styles={styles.titleText}>{timeData}</Text>
+            
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -79,8 +103,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   titleText: {
-    marginTop: 30,
-    marginBottom: 30,
+    marginTop: 20,
+    marginBottom: 10,
     fontSize: 36,
     textAlign: 'center',
     fontFamily: 'Avenir-roman',
@@ -131,6 +155,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir-roman',
     paddingHorizontal: 20,
     paddingTop: 10,
+  },
+  timeText: {
+    fontSize: 15,
+    textAlign: 'center',
+    paddingBottom: 0,
+    marginTop: 20,
   },
   buttonText2: {
     color: 'black',

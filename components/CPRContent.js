@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 // import CheckBox from "react-native-check-box";
 import Accordion from "./Accordion";
 
-export default function ContentScreen({ route }) {
+export default function CPRContent({ route }) {
   const { name } = route.params;
   const { data } = route.params;
 

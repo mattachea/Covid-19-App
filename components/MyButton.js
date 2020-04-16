@@ -11,8 +11,8 @@ export default function MyButton(props) {
       style={[{ backgroundColor: props.color }, styles.buttonStyle]}
       onPress={() => {
         switch (props.content) {
-          case "Contentscreen":
-            navigation.navigate("Contentscreen", {
+          case "CPRContent":
+            navigation.navigate("CPRContent", {
               name: props.name,
               data: props.data,
             });

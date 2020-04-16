@@ -17,9 +17,9 @@ import VideoTutorial from "./components/VideoTutorial";
 import ResourcesScreen from "./screens/ResourcesScreen";
 
 import ButtonScreen from "./components/ButtonScreen";
-import ContentScreen from "./components/ContentScreen";
+import CPRContent from "./components/CPRContent";
 
-import VentilationScreen from "./components/VentilationScreen";
+import VentilationScreen from "./screens/VentilationScreen";
 import Ventilator from "./components/Ventilator";
 
 const Stack = createStackNavigator();
@@ -119,8 +119,8 @@ export default function App(props) {
               }}
             />
             <Stack.Screen
-              name="Contentscreen"
-              component={ContentScreen}
+              name="CPRContent"
+              component={CPRContent}
               options={{
                 title: null,
               }}

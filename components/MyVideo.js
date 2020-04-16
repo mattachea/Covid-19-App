@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
+import { Video } from 'expo-av';
 // import Vimeo from "react-native-vimeo";
 
 export default function MyVideo(props) {

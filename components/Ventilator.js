@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Image, StyleSheet, Text, View} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Video } from 'expo-av';
-//import MyVideo from "../components/MyVideo";
+import MyVideo from "../components/MyVideo";
 
 //var ventPicSrc; //source for vent picture
 
@@ -37,7 +36,7 @@ export default function Ventilator({route}) {
         case "video":
           componentsList.push(
             <View key={k++} style={styles.contentContainer}>
-              <Text>Video Placeholder</Text>
+              <MyVideo/>
             </View>
           );
         break;
@@ -82,12 +81,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "Avenir-roman",
   },
-  subtitleText: {
-    fontSize: 20,
-    // padding: 15,
-    paddingBottom: 20,
-    alignSelf: 'center'
-  },
   image: {
     flex: 1,
     width: undefined,
@@ -95,34 +88,9 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     resizeMode: "contain",
   },
-  text: {
-    fontSize: 18,
-    // fontFamily: "Avenir-roman",
-  },
   contentContainer: {
     flex: 1,
     padding: 10,
-  },
-  optionIconContainer: {
-    marginRight: 12,
-  },
-  option: {
-    backgroundColor: "#fdfdfd",
-    paddingHorizontal: 15,
-    paddingVertical: 15,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderBottomWidth: 0,
-    borderColor: "#ededed",
-  },
-  lastOption: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    marginBottom: 10,
-  },
-  optionText: {
-    fontSize: 15,
-    alignSelf: "flex-start",
-    marginTop: 1,
-    paddingHorizontal: 15,
   },
 });
 

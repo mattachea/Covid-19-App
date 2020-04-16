@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    fontFamily: "Avenir-roman",
+    // fontFamily: "Avenir-roman",
   },
   contentContainer: {
     flex: 1,

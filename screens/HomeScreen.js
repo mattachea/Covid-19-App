@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 36,
     textAlign: 'center',
-    fontFamily: 'Avenir-roman',
+    // fontFamily: 'Avenir-roman',
   },
   buttonContainer: {
   },
@@ -143,9 +143,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginLeft: 10,
     textAlign: 'center',
-    fontFamily: 'Avenir-roman',
+    // fontFamily: 'Avenir-roman',
     paddingHorizontal: 20,
-    paddingTop: 10,
+    // paddingTop: 10, //only use with Avenir-roman
+
   },
   timeText: {
     paddingBottom: 0,
@@ -153,16 +154,16 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 15,
     textAlign: 'center',
-    fontFamily: 'Avenir-roman',
+    // fontFamily: 'Avenir-roman',
   },
   buttonText2: {
     color: 'black',
     fontSize: 20,
     marginLeft: 20,
     textAlign: 'center',
-    fontFamily: 'Avenir-roman',
+    // fontFamily: 'Avenir-roman',
     paddingHorizontal: 20,
-    paddingTop: 10,
+    // paddingTop: 10, //only use with Avenir-roman
   },
   contentContainer: {
     paddingTop: 0,

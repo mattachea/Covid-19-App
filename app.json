@@ -23,8 +23,10 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "Covid-19-Reference"
     },
-    "description": ""
+    "description": "",
+    "githubUrl": "https://github.com/mattachea/Covid-19-App"
   }
 }

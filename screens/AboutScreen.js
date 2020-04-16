@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     fontSize: 36,
     textAlign: 'center',
-    fontFamily: 'Avenir-roman'
+    // fontFamily: 'Avenir-roman'
   },
   option: {
     backgroundColor: '#fdfdfd',
@@ -73,6 +73,6 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     marginTop: 1,
     paddingHorizontal: 15,
-    fontFamily: 'Avenir-roman'
+    // fontFamily: 'Avenir-roman'
   },
 });

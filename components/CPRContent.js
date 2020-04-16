@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 36,
     textAlign: "center",
-    fontFamily: "Avenir-roman",
+    // fontFamily: "Avenir-roman",
   },
   image: {
     flex: 1,
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    fontFamily: "Avenir-roman",
+    // fontFamily: "Avenir-roman",
   },
   contentContainer: {
     // flex: 1,

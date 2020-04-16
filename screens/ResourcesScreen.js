@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     fontSize: 36,
     textAlign: 'center',
     fontWeight: 'bold',
-    fontFamily: 'Avenir-roman'
+    // fontFamily: 'Avenir-roman'
   },
   subtitleText: {
     marginHorizontal: 15,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     alignSelf: 'flex-start',
     fontWeight: 'bold',
-    fontFamily: 'Avenir-roman'
+    // fontFamily: 'Avenir-roman'
   },
   option: {
     backgroundColor: '#fdfdfd',

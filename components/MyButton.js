@@ -60,15 +60,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 1, // IOS
     shadowRadius: 1, //IOS
     elevation: 1, // Android
-    fontFamily: "Avenir-roman",
+    // fontFamily: "Avenir-roman",
     textAlign: "center",
   },
   buttonText: {
     paddingHorizontal: 20,
-    paddingTop: 10,
+    // paddingTop: 10, //use with Avenir-roman only
     color: "black",
     fontSize: 24,
-    fontFamily: "Avenir-roman",
+    // fontFamily: "Avenir-roman",
     textAlign: "center",
     lineHeight: 28,
   },

@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 36,
     textAlign: "center",
-    fontFamily: "Avenir-roman",
+    // fontFamily: "Avenir-roman",
   },
   image: {
     flex: 1,

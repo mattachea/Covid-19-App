@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MattCovid",
-    "slug": "MattCovid",
+    "name": "Covid-19  Reference",
+    "slug": "covid-19-reference",
     "platforms": [
       "ios",
       "android",
@@ -24,6 +24,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }

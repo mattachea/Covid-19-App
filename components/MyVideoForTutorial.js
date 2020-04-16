@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     margin: 3.5,
+    alignItems: 'center'
   },
 });
 

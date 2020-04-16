@@ -30,9 +30,11 @@ export default function Ventilator({route}) {
           );
           break;
         case "video":
+          let video = value.content.video;
+          let timestamps = value.content.timestamps;
           componentsList.push(
             <View key={k++}>
-              <MyVideo video={value.content} timestamps={value.timestamps}/>
+              <MyVideo video={video} timestamps={timestamps}/>
             </View>
           );
         break;

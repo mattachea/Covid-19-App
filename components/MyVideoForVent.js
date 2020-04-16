@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Text, ScrollView } from "react-native";
 import YoutubePlayer from 'react-native-youtube-iframe';
 
 export default function MyVideo(props) {
@@ -13,9 +13,10 @@ export default function MyVideo(props) {
     let buttonList = new Array(Object.keys(timestamps).length);
 
     Object.entries(timestamps).map(([key, value]) => {
-      let timeStamp = value;
+      let timeStamp = value.skipTo;
+      let order = value.order;
       let buttonName = key.replace(/_/g, " ");
-      buttonList.push(
+      buttonList[order] =
         <TouchableOpacity
           key={k++}
           style={styles.buttonStyle}
@@ -24,32 +25,33 @@ export default function MyVideo(props) {
           }}
         >
           <Text style={styles.buttonText}>{buttonName}</Text>
-        </TouchableOpacity>
-      );
+        </TouchableOpacity>;
     });
     return buttonList;
   }
 
   return (
     <View style={styles.contentContainer}>
-      <YoutubePlayer
-        ref={playerRef}
-        height={260}
-        width={400}
-        videoId={props.video}
-        play={playing}
-        onChangeState={event => console.log(event)}   
-        onReady={() => console.log("ready")}
-        onError={e => console.log(e)}
-        onPlaybackQualityChange={q => console.log(q)}
-        volume={50}
-        playbackRate={1}
-        playerParams={{
-          cc_lang_pref: "us",
-          showClosedCaptions: true
-        }}
-      />
-      {createButtons()}
+      <ScrollView>
+        <YoutubePlayer
+          ref={playerRef}
+          height={260}
+          width={400}
+          videoId={props.video}
+          play={playing}
+          onChangeState={event => console.log(event)}   
+          onReady={() => console.log("ready")}
+          onError={e => console.log(e)}
+          onPlaybackQualityChange={q => console.log(q)}
+          volume={50}
+          playbackRate={1}
+          playerParams={{
+            cc_lang_pref: "us",
+            showClosedCaptions: true
+          }}
+        />
+        {createButtons()}
+      </ScrollView>
     </View>
   );
 }

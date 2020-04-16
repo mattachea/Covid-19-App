@@ -9,8 +9,8 @@ export default function MyImage(props) {
     <View>
       <ImageZoom cropWidth={cropWidth}
         cropHeight={cropHeight}
-        imageWidth={undefined}
-        imageHeight={undefined}>
+        imageWidth={500}
+        imageHeight={500}>
 
         <Image
           style={styles.image}
@@ -27,7 +27,7 @@ export default function MyImage(props) {
 const styles = StyleSheet.create({
   image: {
     flex: 1,
-    width: undefined,
+    width: 500,
     height: undefined,
     aspectRatio: 1,
     resizeMode: "contain",

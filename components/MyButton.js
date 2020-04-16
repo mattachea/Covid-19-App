@@ -30,7 +30,6 @@ export default function MyButton(props) {
             navigation.navigate("Ventilator", {
               name: props.name,
               data: props.data,
-              color: props.color,
             });
             break;
           case "Video Tutorial":

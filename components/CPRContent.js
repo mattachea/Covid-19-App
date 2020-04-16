@@ -68,7 +68,6 @@ export default function CPRContent({ route }) {
           componentsList.push(
             <View key={k++} style={styles.contentContainer}>
               <MyImage uri={uri} />
-              {/* <Text> {uri}</Text> */}
             </View>
           );
           break;
@@ -109,7 +108,7 @@ export default function CPRContent({ route }) {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.container}>
+      <ScrollView style={styles.scrollContainer}>
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>{name}</Text>
         </View>
@@ -124,6 +123,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  scrollContainer: {
+    flex: 1,
+    backgroundColor: "#fff",
+    padding: 10,
   },
   titleContainer: {
     alignItems: "center",

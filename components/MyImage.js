@@ -9,10 +9,10 @@ export default function MyImage(props) {
 
   return (
     <View styles = {styles.container}>
-      <ImageZoom cropWidth={windowWidth}
-        cropHeight={windowHeight}
-        imageWidth={windowWidth}
-        imageHeight={windowHeight}>
+      <ImageZoom cropWidth={windowWidth-50}
+        cropHeight={windowHeight-50}
+        imageWidth={windowWidth-50}
+        imageHeight={windowHeight-50}>
         <Image
           style={styles.image}
           source={{

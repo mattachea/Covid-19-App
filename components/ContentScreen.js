@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, RectButton } from "react-native-gesture-handler";
+import * as WebBrowser from "expo-web-browser";
+import { Ionicons } from "@expo/vector-icons";
 // import CheckBox from "react-native-check-box";
 import Accordion from "./Accordion";
 
@@ -8,33 +10,8 @@ export default function ContentScreen({ route }) {
   const { name } = route.params;
   const { data } = route.params;
 
+  //create list of objects using a switch statement on the type of component we want to render
   function createObjects() {
-    // var objectsList = [];
-    // var indices = [];
-    // for(var i=0; i<data.length;i++) {
-    //   if (data[i] === "$") indices.push(i);
-    // }
-    // if (indices.length == 0) {
-    //   let textObject = <Text key = '1' style = {styles.text}>{data}</Text>;
-    //   objectsList.push(textObject);
-    // } else {
-    //   let firstText = data.substring(0, indices[0]);
-    //   let firstObject = <Text key = '1' style = {styles.text}>{firstText}</Text>;
-    //   objectsList.push(firstObject);
-    //   for (let i = 0; i < indices.length; i = i + 2) {
-    //     let imageName = data.substring(indices[i]+1, indices[i+1]);
-    //     let text = data.substring(indices[i+1]+1, indices[i+2]);
-    //     let imageObject = <Image
-    //     style={{width: 350, height: 350, alignSelf: 'center', margin: 10, resizeMode: 'contain'}}
-    //     source={{uri: "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FCPRImages%2F"+imageName+"?alt=media&token=9b535aac-9275-4cfa-b4f3-552010ab594b"}}/>;
-    //     objectsList.push(imageObject);
-    //     let textObject = <Text key = {i} style = {styles.text}>{text}</Text>;
-    //     objectsList.push(textObject);
-    //   }
-    // }
-    // return objectsList;
-
-    // code works but need to change database to the correct structure.
     let k = 0; //for unique keys to get rid of warnings
 
     function bulletPoint(value, padding) {
@@ -54,7 +31,7 @@ export default function ContentScreen({ route }) {
       });
     }
 
-    var componentsList = [];
+    let componentsList = [];
     Object.entries(data).map(([key, value]) => {
       switch (value.type) {
         case "text":
@@ -98,6 +75,29 @@ export default function ContentScreen({ route }) {
           componentsList.push(
             <View key={k++} style={styles.contentContainer}>
               <Accordion title={value.title} data={value.content}></Accordion>
+            </View>
+          );
+          break;
+        case "url":
+          componentsList.push(
+            <View key={k++}>
+              <RectButton
+                style={styles.option}
+                onPress={() => WebBrowser.openBrowserAsync(value.content.link)}
+              >
+                <View style={{ flexDirection: "row" }}>
+                  <View style={styles.optionIconContainer}>
+                    <Ionicons
+                      name="md-school"
+                      size={22}
+                      color="rgba(0,0,0,0.35)"
+                    />
+                  </View>
+                  <View style={styles.optionTextContainer}>
+                    <Text style={styles.optionText}>{value.content.title}</Text>
+                  </View>
+                </View>
+              </RectButton>
             </View>
           );
           break;
@@ -147,5 +147,26 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     padding: 10,
+  },
+  optionIconContainer: {
+    marginRight: 12,
+  },
+  option: {
+    backgroundColor: "#fdfdfd",
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: 0,
+    borderColor: "#ededed",
+  },
+  lastOption: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    marginBottom: 10,
+  },
+  optionText: {
+    fontSize: 15,
+    alignSelf: "flex-start",
+    marginTop: 1,
+    paddingHorizontal: 15,
   },
 });

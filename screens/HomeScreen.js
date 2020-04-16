@@ -63,7 +63,7 @@ export default function HomeScreen({navigation}) {
               style={styles.buttonIcon}
               style= {{marginLeft: 32}}
             />
-            <Text style={styles.buttonText2}>Resources</Text>
+            <Text style={styles.buttonText3}>Resources</Text>
           </TouchableOpacity>
 
           </View>
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     fontSize: 36,
     textAlign: 'center',
+    fontFamily: 'Avenir-roman',
   },
   buttonContainer: {
   },
@@ -125,14 +126,29 @@ const styles = StyleSheet.create({
   buttonText1: {
     color: 'white',
     fontSize: 20,
-    marginLeft: 20,
+    marginLeft: 10,
     textAlign: 'center',
+    fontFamily: 'Avenir-roman',
+    paddingHorizontal: 20,
+    paddingTop: 10,
   },
   buttonText2: {
     color: 'black',
     fontSize: 20,
+    marginLeft: 10,
+    textAlign: 'center',
+    fontFamily: 'Avenir-roman',
+    paddingHorizontal: 20,
+    paddingTop: 10,
+  },
+  buttonText3: {
+    color: 'black',
+    fontSize: 20,
     marginLeft: 20,
     textAlign: 'center',
+    fontFamily: 'Avenir-roman',
+    paddingHorizontal: 20,
+    paddingTop: 10,
   },
   contentContainer: {
     paddingTop: 0,

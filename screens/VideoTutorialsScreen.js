@@ -67,12 +67,12 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     fontSize: 36,
     textAlign: "center",
+    fontFamily: 'Avenir-roman',
   },
   titleImage: {
     width: 150,
     height: 150,
     resizeMode: "contain",
-    marginBottom: 20,
   },
 });
 

@@ -10,21 +10,14 @@ import { storageRef } from "../config";
 
 var ventPicSrc; //source for vent picture
 
-export default function Ventilator({route}) {
+export default function VideoTutorial({route}) {
   const { name } = route.params;
   const { data } = route.params;
-
-  const namePath = (name.split(' ').join('_') + "_Quick_Guide.png");
-
-  fetchQRGuidePic(namePath);
-
-  //source={{uri: ventPicSrc}} -->proper method of doing this but issues due to async
-  //source={require("../assets/images/" + name.split(' ').join('_') + "_Quick_Guide.png")}
   return (
     <View style = {styles.container}>
         <ScrollView>
           <Text style={styles.titleText}> {name} </Text>
-          <Text>{'397812788'}</Text>
+          <Text>{'Video Placeholder'}</Text>
         </ScrollView>
     </View>
   );

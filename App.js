@@ -12,6 +12,8 @@ import HomeScreen from "./screens/HomeScreen";
 import ClinicianScreen from "./screens/ClinicianScreen";
 
 import VideoTutorialsScreen from "./screens/VideoTutorialsScreen";
+import VideoTutorial from "./components/VideoTutorial";
+
 import ResourcesScreen from "./screens/ResourcesScreen";
 
 import ButtonScreen from "./components/ButtonScreen";
@@ -96,7 +98,7 @@ export default function App(props) {
               }}
             />
             <Stack.Screen
-              name="Video Tutorials"
+              name="Tutorscreen"
               component={VideoTutorialsScreen}
               options={{
                 title: null,
@@ -133,6 +135,13 @@ export default function App(props) {
             <Stack.Screen
               name="Ventilator"
               component={Ventilator}
+              options={{
+                title: null,
+              }}
+            />
+            <Stack.Screen
+              name="Video Tutorial"
+              component={VideoTutorial}
               options={{
                 title: null,
               }}

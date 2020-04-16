@@ -30,6 +30,12 @@ export default function MyButton(props) {
               color: props.color,
             });
             break;
+          case "Video Tutorial":
+            navigation.navigate("Video Tutorial", {
+              name: props.name,
+              data: props.data,
+            });
+            break;
         }
       }}
     >

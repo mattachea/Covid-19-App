@@ -5,6 +5,7 @@ import * as WebBrowser from "expo-web-browser";
 import { Ionicons } from "@expo/vector-icons";
 // import CheckBox from "react-native-check-box";
 import Accordion from "./Accordion";
+import MyImage from "../components/MyImage";
 
 export default function CPRContent({ route }) {
   const { name } = route.params;
@@ -57,17 +58,12 @@ export default function CPRContent({ route }) {
           bulletPoint(value, 20); //need to actually implement checkboxes later
           break;
         case "image":
+          let uri = "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FCPRImages%2F" +
+            value.content +
+            "?alt=media&token=9b535aac-9275-4cfa-b4f3-552010ab594b";
           componentsList.push(
             <View key={k++} style={styles.contentContainer}>
-              <Image
-                style={styles.image}
-                source={{
-                  uri:
-                    "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FCPRImages%2F" +
-                    value.content +
-                    "?alt=media&token=9b535aac-9275-4cfa-b4f3-552010ab594b",
-                }}
-              />
+              <MyImage uri={uri}/>
             </View>
           );
           break;

@@ -1,12 +1,12 @@
 import React, {useRef, useState} from 'react';
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import YoutubePlayer from 'react-native-youtube-iframe';
 
-export default function MyVideo(props) {
+export default function MyVideoForTutorial(props) {
   const playerRef = useRef(null);
   const [playing, setPlaying] = useState(true);
   return (
-    <View style={{ paddingTop: 60 }}>
+    <View style={styles.contentContainer}>
       <YoutubePlayer
         ref={playerRef}
         height={300}
@@ -27,3 +27,11 @@ export default function MyVideo(props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  contentContainer: {
+    flex: 1,
+    margin: 3.5,
+  },
+});
+

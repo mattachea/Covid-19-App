@@ -42,7 +42,7 @@ function getHeaderTitle(route) {
   switch (routeName) {
     case 'Home':
       return '';
-    case 'Clinician':
-      return 'Clinician Pocket Reference';
+    case 'About':
+      return '';
   }
 }

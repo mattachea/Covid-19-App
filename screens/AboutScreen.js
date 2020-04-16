@@ -7,11 +7,6 @@ import { RectButton, ScrollView } from 'react-native-gesture-handler';
 export default function AboutScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      {/* <OptionButton
-        icon="md-school"
-        label="Read the Expo documentation"
-        onPress={() => WebBrowser.openBrowserAsync('https://docs.expo.io')}
-      /> */}
 
     <Text style={styles.titleText}>
         About
@@ -60,6 +55,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     fontSize: 36,
     textAlign: 'center',
+    fontFamily: 'Avenir-roman'
   },
   option: {
     backgroundColor: '#fdfdfd',
@@ -73,9 +69,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   optionText: {
-    fontSize: 15,
+    fontSize: 20,
     alignSelf: 'flex-start',
     marginTop: 1,
     paddingHorizontal: 15,
+    fontFamily: 'Avenir-roman'
   },
 });

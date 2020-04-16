@@ -81,8 +81,8 @@ export default function App(props) {
           initialState={initialNavigationState}
         >
           <Stack.Navigator>
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
-            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="About" component={BottomTabNavigator} />
+            <Stack.Screen name="Home" component={BottomTabNavigator} />
             <Stack.Screen
               name="Clinician Pocket Reference"
               component={ClinicianScreen}

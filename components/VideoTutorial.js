@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import MyVideo from "../components/MyVideo";
+import MyVideo from "../components/MyVideoForTutorial";
 import { db } from "../config";
 
 export default function VideoTutorial({route}) {
@@ -33,7 +33,7 @@ export default function VideoTutorial({route}) {
       switch (value.type) {
         case "video":
           componentsList.push(
-            <View key={k++} style={styles.contentContainer}>
+            <View key={k++}>
               <MyVideo video={value.content}/>
             </View>
           );
@@ -84,6 +84,6 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    padding: 10,
+    margin: 3.5,
   },
 });

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Image, StyleSheet, Text, View} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import MyVideo from "../components/MyVideo";
+import MyVideo from "../components/MyVideoForVent";
+import MyImage from "../components/MyImage";
 
 //var ventPicSrc; //source for vent picture
 
@@ -19,24 +20,19 @@ export default function Ventilator({route}) {
     Object.entries(data).map(([key, value]) => {
       switch (value.type) {
         case "image":
+          let uri = "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FQwikRefGuide%2F" + 
+            value.content +
+            "?alt=media&token=1cdcded1-d887-412e-b632-62a4dc92b3bc";
           componentsList.push(
             <View key={k++} style={styles.contentContainer}>
-              <Image
-                style={styles.image}
-                source={{
-                  uri:
-                    "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FQwikRefGuide%2F" +
-                    value.content +
-                    "?alt=media&token=1cdcded1-d887-412e-b632-62a4dc92b3bc",
-                }}
-              />
+              <MyImage uri={uri}/>
             </View>
           );
           break;
         case "video":
           componentsList.push(
-            <View key={k++} style={styles.contentContainer}>
-              <MyVideo video={value.content}/>
+            <View key={k++}>
+              <MyVideo video={value.content} timestamps={value.timestamps}/>
             </View>
           );
         break;
@@ -90,7 +86,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    padding: 10,
+    margin: 3.5,
   },
 });
 

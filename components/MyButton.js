@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   buttonText: {
     paddingHorizontal: 20,
     paddingTop: 10,
-    color: "#FFFFFF",
+    color: "black",
     fontSize: 24,
     fontFamily: "Avenir-roman",
     textAlign: "center",

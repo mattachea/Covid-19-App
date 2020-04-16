@@ -7,6 +7,23 @@ export default function VideoTutorial({route}) {
   const { name } = route.params;
   const { data } = route.params;
 
+  /*const [data, setData] = useState({});
+
+  async function getData() {
+    try {
+      const snapshot = await db.ref("tutorials/").once("value");
+      let data = snapshot.val();
+      setData(data);
+
+      // console.log(data)
+    } catch (e) {
+      console.warn(e);
+    }
+  }
+  useEffect(() => {
+    getData();
+  }, []);*/
+
   function createObjects() {
     let k = 0; //for unique keys to get rid of warnings
 

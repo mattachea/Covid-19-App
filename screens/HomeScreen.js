@@ -5,91 +5,97 @@ import { NavigationContainer } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 import { db } from "../config";
-import { data } from '../App';
 
 export default function HomeScreen({navigation}) {
+  const [timeData, setData] = useState({});
 
-   // To get time from Firebase:
-   const [timeData, setData] = useState({});
+  async function getData() {
+    try {
+      const snapshot = await db.ref("Update_Time/").once("value");
+      let data = snapshot.val();
+      setData(data);
+    } catch (e) {
+      console.warn(e);
+    }
+  }
+  useEffect(() => {
+    getData();
+  }, []);
 
-   async function getData() {
-     try {
-       const snapshot = await db.ref("Update_Time/").once("value");
-       let data = snapshot.val();
-       setData(data);
- 
-     console.log(data)
-     } catch (e) {
-       console.warn(e);
-     }
-   }
-   useEffect(() => {
-     getData();
-   }, []);
+  const image1 = require('../assets/images/clinician.png');
+  const image2 = require('../assets/images/ventilator.png');
+  const image3 = require('../assets/images/PPE.png');
+
+  const homeObjects = [
+    ['Clinician Pocket Reference', image1, 'Clinician Reference'], 
+    ['Ventilation', image2, 'Ventilation'], 
+    ['Tutorscreen', image3, 'Video Tutorials']
+  ];
+
+  function createButtons() {
+    let k =0 ;
+    let buttonList = [];
+    homeObjects.map(([screen, image, buttonName]) => {
+      buttonList.push(
+        <TouchableOpacity
+          style={styles.buttonStyle}
+          key = {k++}
+          onPress={() => navigation.navigate(screen)}
+        >
+
+          <Image
+            source={image}
+            style={styles.buttonIcon}
+          />
+
+          <Text style={styles.buttonText}>{buttonName}</Text>
+
+        </TouchableOpacity>
+      );
+    });
+
+    buttonList.push(
+      <TouchableOpacity
+        style={styles.buttonStyle}
+        key = {k++}
+        onPress={() => navigation.navigate('Resources')}
+      >
+        <Ionicons
+          name={"md-information-circle-outline"}
+          size={30}
+          style={styles.buttonIcon}
+          style= {{marginLeft: 32}}
+        />
+
+        <Text style={styles.buttonText2}>Resources</Text>
+      </TouchableOpacity>
+    );
+    
+    buttonList.push(
+      <View style={styles.contentContainer} key = {k++}>
+        <Text style={styles.timeText}>{String(timeData)}</Text>
+      </View>
+    );
+
+    return buttonList;
+  }
 
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.titleContainer}>
+
           <Image
             source={require('../assets/images/splash.png')}
             style={styles.titleImage}
           />
+
           <Text style={styles.titleText}>
             COVID-19 {"\n"}Pocket Reference
           </Text>
 
           <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.buttonStyle1}
-            onPress={() => navigation.navigate('Clinician Pocket Reference')}
-          >
-            <Image
-              source={require('../assets/images/clinician.png')}
-              style={styles.buttonIcon}
-              />
-            <Text style={styles.buttonText1}>Clinician Reference</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.buttonStyle2}
-            onPress={() => navigation.navigate('Ventilation')}
-          >
-            <Image
-              source={require('../assets/images/ventilator.png')}
-              style={styles.buttonIcon}
-            />
-            <Text style={styles.buttonText2}>Ventilation</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.buttonStyle1}
-            onPress={() => navigation.navigate('Tutorscreen')}
-          >
-            <Image
-              source={require('../assets/images/PPE.png')}
-              style={styles.buttonIcon}
-              />
-            <Text style={styles.buttonText1}>Video Tutorials</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.buttonStyle2}
-            onPress={() => navigation.navigate('Resources')}
-          >
-            <Ionicons
-              name={"md-information-circle-outline"}
-              size={30}
-              style={styles.buttonIcon}
-              style= {{marginLeft: 32}}
-            />
-            <Text style={styles.buttonText3}>Resources</Text>
-          </TouchableOpacity>
-
-          <View style={styles.contentContainer}>
-          <Text style={styles.timeText}>{timeData}</Text>
-          </View>
-
+            {createButtons()}
           </View>
         </View>
       </ScrollView>
@@ -117,14 +123,14 @@ const styles = StyleSheet.create({
     height:40,
     resizeMode: 'contain',
   },
-  buttonStyle1: {
+  buttonStyle: {
     flexDirection: 'row',
     marginVertical: 8,
     alignItems:'center',
     justifyContent:'flex-start',
     width:300,
     height:70,
-    backgroundColor: '#1082C7',
+    backgroundColor: '#F2F2F2',
     borderRadius:20,
     shadowColor: 'rgba(0,0,0, .4)', // IOS
     shadowOffset: { height: 1, width: 0 }, // IOS
@@ -132,37 +138,7 @@ const styles = StyleSheet.create({
     shadowRadius: 1, //IOS
     elevation: 1, // Android
   },
-  buttonStyle2: {
-    flexDirection: 'row',
-    marginVertical: 8,
-    alignItems:'center',
-    justifyContent:'flex-start',
-    width:300,
-    height:70,
-    backgroundColor: '#EFCB34',
-    borderRadius:20,
-    shadowColor: 'rgba(0,0,0, .4)', // IOS
-    shadowOffset: { height: 1, width: 0 }, // IOS
-    shadowOpacity: 1, // IOS
-    shadowRadius: 1, //IOS
-    elevation: 1, // Android
-  },
-  buttonText1: {
-    color: 'white',
-    fontSize: 20,
-    marginLeft: 10,
-    textAlign: 'center',
-    fontFamily: 'Avenir-roman',
-    paddingHorizontal: 20,
-    paddingTop: 10,
-  },
-  timeText: {
-    fontSize: 15,
-    textAlign: 'center',
-    paddingBottom: 0,
-    marginTop: 20,
-  },
-  buttonText2: {
+  buttonText: {
     color: 'black',
     fontSize: 20,
     marginLeft: 10,
@@ -171,7 +147,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 10,
   },
-  buttonText3: {
+  timeText: {
+    paddingBottom: 0,
+    marginTop: 10,
+    color: 'black',
+    fontSize: 15,
+    textAlign: 'center',
+    fontFamily: 'Avenir-roman',
+  },
+  buttonText2: {
     color: 'black',
     fontSize: 20,
     marginLeft: 20,

@@ -13,7 +13,7 @@ export default function VideoTutorialsScreen({navigation}) {
       let data = snapshot.val();
       setData(data);
 
-      // console.log(data)
+      console.log(data);
     } catch (e) {
       console.warn(e);
     }
@@ -22,12 +22,16 @@ export default function VideoTutorialsScreen({navigation}) {
     getData();
   }, []);
 
+  //const videoData = allData["tutorials"];
+  //const tutorData = allData["Tutorial_Categories"];
+  //data={videoData}
+
   function createButtons() {
     let buttonList = new Array(Object.keys(tutorData).length);
     Object.entries(tutorData).map(([key, value]) => {
       let name = key.replace(/_/g, " ");
       buttonList[value.order] =  
-        <MyButton name={name} color={value.color} key={key} content = 'Video Tutorial' />
+        <MyButton name={name} color={value.color} key={key} content='Video Tutorial' />
       
     });
     return buttonList;

@@ -68,7 +68,7 @@ export default function App(props) {
     loadResourcesAndDataAsync();
   }, []);
 
-  //Platform.OS === "ios" && <StatusBar barStyle="default" />;
+  Platform.OS === "ios" && <StatusBar barStyle="default" />;
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return null;

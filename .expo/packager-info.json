@@ -3,8 +3,8 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://w7-gbb.covid-19-guide.mattcovid.exp.direct",
+  "packagerNgrokUrl": "https://packager.w7-gbb.covid-19-guide.mattcovid.exp.direct",
+  "ngrokPid": 89638,
   "webpackServerPort": null
 }

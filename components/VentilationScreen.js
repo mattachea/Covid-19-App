@@ -4,10 +4,8 @@ import { ScrollView } from "react-native-gesture-handler";
 import MyButton from "../components/MyButton";
 import { db } from "../config";
 
-var colors = ["#7ED551", "#EFCB34", "#E75351"];
-
 export default function VentilationScreen({ navigation }) {
-  const [cprData, setData] = useState({});
+  const [ventData, setData] = useState({});
 
   async function getData() {
     try {
@@ -25,16 +23,12 @@ export default function VentilationScreen({ navigation }) {
   }, []);
 
   function createButtons() {
-    let buttonList = [];
-    let i = 0;
-    Object.entries(cprData).map(([key, value]) => {
+    let buttonList = new Array(Object.keys(ventData).length);
+    Object.entries(ventData).map(([key, value]) => {
       let name = key.replace(/_/g, " ");
-      buttonList.push(
-        // <MyButtonVent name={name} color={colors[i % 3]} data={key} key={key} />
-        <MyButton name={name} color={colors[i % 3]} data={key} key={key} content = 'Ventilator'/>
-
-      );
-      i = i + 1;
+      buttonList[value.order] =  
+        <MyButton name={name} color={value.color} data={key} key={key} content = 'Ventilator' />
+      
     });
     return buttonList;
   }

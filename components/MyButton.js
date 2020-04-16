@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
@@ -21,6 +22,8 @@ export default function MyButton(props) {
               name: props.name,
               data: props.data,
               color: props.color,
+              page: props.page,
+              nextScreen: props.nextScreen,
             });
             break;
           case "Ventilator":

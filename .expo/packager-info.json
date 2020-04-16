@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19003,
-  "packagerPid": 63687,
-  "expoServerNgrokUrl": "https://tn-j8w.anonymous.mattcovid.exp.direct",
-  "packagerNgrokUrl": "https://packager.tn-j8w.anonymous.mattcovid.exp.direct",
-  "ngrokPid": 63709
+  "packagerPort": 19001,
+  "packagerPid": 5057,
+  "expoServerNgrokUrl": "https://tn-j8w.anonymous.covid-19-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.tn-j8w.anonymous.covid-19-app.exp.direct",
+  "ngrokPid": 5067
 }

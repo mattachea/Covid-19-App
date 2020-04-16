@@ -25,7 +25,7 @@ export default function ClinicianScreen({ navigation }) {
     Object.entries(cprData).map(([key, value]) => {
       let name = key.replace(/_/g, " ");
       buttonList[value.order] =  
-        <MyButton name={name} color={value.color} data={key} key={key} content = 'Buttonscreen' />
+        <MyButton name={name} color={value.color} data={key} key={key} page={'cpr/'} nextScreen={'Contentscreen'} content = 'Buttonscreen' />
       
     });
     return buttonList;

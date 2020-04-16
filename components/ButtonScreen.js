@@ -9,11 +9,13 @@ export default function ButtonScreen({ route, navigation }) {
   const { name } = route.params;
   const { data } = route.params;
   const { color } = route.params;
+  const { page } = route.params;
+  const { nextScreen } = route.params;
   
-  const [cprData, setData] = useState({});
+  const [pageData, setData] = useState({});
 
   async function getData() {
-    const path = ''.concat("cpr/", data);
+    const path = ''.concat(page, data);
     try {
       const snapshot = await db.ref(path).once("value");
       let data = snapshot.val();
@@ -28,9 +30,9 @@ export default function ButtonScreen({ route, navigation }) {
 
   function createButtons() {
     let buttonList = [];
-    Object.entries(cprData).map(([key, value]) => {
+    Object.entries(pageData).map(([key, value]) => {
         let title = key.replace(/_/g, " ");
-        buttonList.push(<MyButton name={title} data = {value} color={color} key={key} content='Contentscreen'/>);
+        buttonList.push(<MyButton name={title} data = {value} color={color} key={key} content={nextScreen}/>);
     })
     return buttonList;
   }

@@ -27,7 +27,7 @@ export default function VentilationScreen({ navigation }) {
     Object.entries(ventData).map(([key, value]) => {
       let name = key.replace(/_/g, " ");
       buttonList[value.order] =  
-        <MyButton name={name} color={value.color} data={key} key={key} content = 'Ventilator' />
+        <MyButton name={name} color={value.color} data={key} key={key} page={'ventilators/'} nextScreen={'Ventilator'} content = 'Buttonscreen' />
       
     });
     return buttonList;

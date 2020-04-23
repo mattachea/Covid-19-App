@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/static/js/app.2a4b79e4.chunk.js",
-    "app.js.map": "/static/js/app.2a4b79e4.chunk.js.map",
+    "app.js": "/static/js/app.f4b626b8.chunk.js",
+    "app.js.map": "/static/js/app.f4b626b8.chunk.js.map",
     "runtime~app.js": "/static/js/runtime~app.b3244af7.js",
     "runtime~app.js.map": "/static/js/runtime~app.b3244af7.js.map",
-    "static/js/2.1fc558e9.chunk.js": "/static/js/2.1fc558e9.chunk.js",
-    "static/js/2.1fc558e9.chunk.js.map": "/static/js/2.1fc558e9.chunk.js.map",
+    "static/js/2.c206dd74.chunk.js": "/static/js/2.c206dd74.chunk.js",
+    "static/js/2.c206dd74.chunk.js.map": "/static/js/2.c206dd74.chunk.js.map",
     "fonts/AntDesign.ttf": "/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/./fonts/Feather.ttf",
@@ -30,14 +30,14 @@
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
     "serve.json": "/serve.json",
-    "static/media/PPE.png": "/static/media/PPE.01d54dce.png",
+    "static/media/PPE.png": "/static/media/PPE.287ebc48.png",
     "static/media/clinician.png": "/static/media/clinician.ef06a45b.png",
     "static/media/splash.png": "/static/media/splash.0c1539d5.png",
     "static/media/ventilator.png": "/static/media/ventilator.2916251d.png"
   },
   "entrypoints": [
     "static/js/runtime~app.b3244af7.js",
-    "static/js/2.1fc558e9.chunk.js",
-    "static/js/app.2a4b79e4.chunk.js"
+    "static/js/2.c206dd74.chunk.js",
+    "static/js/app.f4b626b8.chunk.js"
   ]
 }

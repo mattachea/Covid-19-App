@@ -88,9 +88,7 @@ export default class Accordion extends Component {
                 "?alt=media&token=9b535aac-9275-4cfa-b4f3-552010ab594b";
               componentsList.push(
                 <View key={k++} style={styles.contentContainer}>
-                  {/* <MyImage uri={uri} backgroundColor={'#00000'}/> */} 
-                  <MyImage uri={uri}/>
-
+                  <MyImage uri={uri} backgroundColor={'#00000'}/> 
                 </View>
               );
               break;

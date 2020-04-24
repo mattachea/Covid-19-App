@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import { ScrollView, RectButton } from "react-native-gesture-handler";
 import * as WebBrowser from "expo-web-browser";
 import { Ionicons } from "@expo/vector-icons";
-// import CheckBox from "react-native-check-box";
+import MyCheckbox from "./MyCheckbox";
 import Accordion from "./Accordion";
 import MyImage from "../components/MyImage";
 
@@ -14,15 +14,13 @@ export default function CPRContent({ route }) {
   //create list of objects using a switch statement on the type of component we want to render
   function createObjects() {
     let k = 0; //for unique keys to get rid of warnings
+    let componentsList = [];
 
-    function bulletPoint(value, padding) {
+    function bulletPoints(value, offset) {
       const list = value.content.split("#");
       list.map((item) => {
         componentsList.push(
-          <View
-            key={k++}
-            style={{ flexDirection: "row", paddingLeft: padding }}
-          >
+          <View key={k++} style={{ flexDirection: "row", paddingLeft: offset }}>
             <Text style={styles.text}>{"\u2022"}</Text>
             <Text style={[{ flex: 1, paddingLeft: 5 }, styles.text]}>
               {item}
@@ -32,7 +30,17 @@ export default function CPRContent({ route }) {
       });
     }
 
-    let componentsList = [];
+    function checkboxes(value, offset) {
+      const list = value.content.split("#");
+      list.map((item) => {
+        componentsList.push(
+          <View key={k++} style={{paddingTop: (offset == 0) ? 20 : 0}}>
+            <MyCheckbox data={item} offset={offset}></MyCheckbox>
+          </View>
+        );
+      });
+    }
+
     Object.entries(data).map(([key, value]) => {
       switch (value.type) {
         case "text":
@@ -46,19 +54,19 @@ export default function CPRContent({ route }) {
           );
           break;
         case "mainBullet":
-          bulletPoint(value, 0);
+          bulletPoints(value, 0);
           break;
         case "subBullet":
-          bulletPoint(value, 20);
+          bulletPoints(value, 20);
           break;
         case "subsubBullet":
-          bulletPoint(value, 40);
+          bulletPoints(value, 40);
           break;
         case "mainCheckbox":
-          bulletPoint(value, 0); //need to actually implement checkboxes later
+          checkboxes(value, 0);
           break;
         case "subCheckbox":
-          bulletPoint(value, 20); //need to actually implement checkboxes later
+          checkboxes(value, 40);
           break;
         case "image":
           let uri =
@@ -151,7 +159,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     // flex: 1,
-    alignContent: 'center',
+    alignContent: "center",
   },
   optionIconContainer: {
     marginRight: 12,

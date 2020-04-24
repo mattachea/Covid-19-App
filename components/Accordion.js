@@ -3,9 +3,10 @@ import { View, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { Ionicons } from '@expo/vector-icons';
 import PropTypes from "prop-types";
-import { ScrollView, RectButton } from "react-native-gesture-handler";
+import {RectButton } from "react-native-gesture-handler";
 import * as WebBrowser from "expo-web-browser";
 import MyImage from './MyImage';
+import MyCheckbox from './MyCheckbox';
 
 export default class Accordion extends Component {
   // Specifies the default values for props:
@@ -45,6 +46,16 @@ export default class Accordion extends Component {
         );
       });
     };
+    function checkboxes(value, offset) {
+      const list = value.content.split("#");
+      list.map((item) => {
+        componentsList.push(
+          <View key={k++} style={{paddingTop: (offset == 0) ? 20 : 0}}>
+            <MyCheckbox data={item} offset={offset}></MyCheckbox>
+          </View>
+        );
+      });
+    }
 
     function createObjects(data) {
       Object.entries(data).map(([key, value]) => {
@@ -66,10 +77,10 @@ export default class Accordion extends Component {
             bulletPoint(value, 20);
             break;
           case "mainCheckbox":
-            bulletPoint(value, 0); //need to actually implement checkboxes later
+            checkboxes(value, 0);
             break;
           case "subCheckbox":
-            bulletPoint(value, 20); //need to actually implement checkboxes later
+            checkboxes(value, 20);
             break;
             case "image":
               let uri = "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FCPRImages%2F" +

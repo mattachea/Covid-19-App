@@ -68,14 +68,14 @@ export default function App(props) {
     loadResourcesAndDataAsync();
   }, []);
 
-  Platform.OS === "ios" && <StatusBar barStyle="default" />;
+  Platform.OS === "ios" && <StatusBar barStyle="dark-content" />;
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return null;
   } else {
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="default"/>
+        <StatusBar barStyle="dark-content"/>
         <NavigationContainer
           ref={containerRef}
           initialState={initialNavigationState}

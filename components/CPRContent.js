@@ -29,7 +29,6 @@ export default function CPRContent({ route }) {
         );
       });
     }
-
     function checkboxes(value, offset) {
       const list = value.content.split("#");
       list.map((item) => {

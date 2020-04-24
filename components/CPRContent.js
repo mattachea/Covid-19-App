@@ -74,7 +74,7 @@ export default function CPRContent({ route }) {
             "?alt=media&token=9b535aac-9275-4cfa-b4f3-552010ab594b";
           componentsList.push(
             <View key={k++} style={styles.contentContainer}>
-              <MyImage uri={uri} />
+              <MyImage uri={uri} backgroundColor={'#fffff'}/>
             </View>
           );
           break;

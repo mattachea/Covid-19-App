@@ -1,8 +1,8 @@
 {
-  "urlRandomness": "ig-any",
+  "urlRandomness": "mf-9v5",
   "hostType": "lan",
   "lanType": "ip",
-  "dev": true,
-  "minify": false,
+  "dev": false,
+  "minify": true,
   "https": true
 }

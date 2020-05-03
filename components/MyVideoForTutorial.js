@@ -1,8 +1,12 @@
 import React, {useRef, useState} from 'react';
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 import YoutubePlayer from 'react-native-youtube-iframe';
 
-export default function MyVideoForTutorial(props) {
+export default function MyVideo(props) {
+  return Platform.OS == "web" ? webVideo(props) : appVideo(props);
+}
+
+function appVideo(props) {
   const playerRef = useRef(null);
   const [playing, setPlaying] = useState(true);
   return (
@@ -24,6 +28,24 @@ export default function MyVideoForTutorial(props) {
           showClosedCaptions: true
         }}
       />
+    </View>
+  );
+}
+
+function webVideo(props) {
+  let uri = "https://www.youtube.com/embed/" + props.video;
+  return (
+    <View styles={styles.contentContainer}>
+      <div style="align:center;">
+        <iframe
+          width="400" 
+          height="300" 
+          src={uri}
+          frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
     </View>
   );
 }

@@ -1,14 +1,18 @@
 import React, {useRef, useState} from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, ScrollView } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Platform } from "react-native";
 import YoutubePlayer from 'react-native-youtube-iframe';
 
 export default function MyVideo(props) {
+  return Platform.OS == "web" ? webVideo(props) : appVideo(props);
+}
+
+function appVideo(props) {
   const playerRef = useRef(null);
   const [playing, setPlaying] = useState(true);
 
   let timestamps = props.timestamps;
 
-  function createButtons() {
+  function createButtonsApp() {
     let k = 0;
     let buttonList = new Array(Object.keys(timestamps).length);
 
@@ -50,7 +54,53 @@ export default function MyVideo(props) {
             showClosedCaptions: true
           }}
         />
-        {createButtons()}
+        {createButtonsApp()}
+      </ScrollView>
+    </View>
+  );
+}
+
+function webVideo(props) {
+  let uri = "https://www.youtube.com/embed/" + props.video;
+  let timestamps = props.timestamps;
+
+  function createButtonsWeb() {
+    let k = 0;
+    let buttonList = new Array(Object.keys(timestamps).length);
+
+    Object.entries(timestamps).map(([key, value]) => {
+      let timeStamp = value.skipTo;
+      let order = value.order;
+      let buttonName = key.replace(/_/g, " ");
+      buttonList[order] =
+        <TouchableOpacity
+          key={k++}
+          style={styles.buttonStyle}
+          onPress={() => {
+            playerRef.current.seekTo(timeStamp);
+          }}
+        >
+          <Text style={styles.buttonText}>{buttonName}</Text>
+        </TouchableOpacity>;
+    });
+    return buttonList;
+  }
+
+  //{createButtonsWeb()}
+
+  return (
+    <View styles={styles.contentContainer}>
+      <ScrollView>
+        <div style="margin:3.5;flex:1;alignItems:center;">
+          <iframe 
+            width="400" 
+            height="300" 
+            src={uri}
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
       </ScrollView>
     </View>
   );

@@ -56,6 +56,36 @@ export default class Accordion extends Component {
         );
       });
     }
+    function letters(value, offset) {
+      const list = value.content.split("#");
+      var unicode = 97;
+      list.map((item) => {
+        componentsList.push(
+          <View key={k++} style={{ flexDirection: "row", paddingLeft: offset, paddingTop: (offset == 0) ? 20 : 0}}>
+            <Text style={styles.text}>{String.fromCharCode(unicode) + "."}</Text>
+            <Text style={[{ flex: 1, paddingLeft: 5 }, styles.text]}>
+              {item}
+            </Text>
+          </View>
+        );
+        unicode = unicode + 1;
+      });
+    }
+    function numbers(value, offset) {
+      const list = value.content.split("#");
+      var number = 1;
+      list.map((item) => {
+        componentsList.push(
+          <View key={k++} style={{ flexDirection: "row", paddingLeft: offset, paddingTop: (offset == 0) ? 20 : 0}}>
+            <Text style={styles.text}>{String(number) + "."}</Text>
+            <Text style={[{ flex: 1, paddingLeft: 5 }, styles.text]}>
+              {item}
+            </Text>
+          </View>
+        );
+        number = number + 1;
+      });
+    }
 
     function createObjects(data) {
       Object.entries(data).map(([key, value]) => {
@@ -118,6 +148,18 @@ export default class Accordion extends Component {
                 </RectButton>
               </View>
             );
+            break;
+          case "mainLetters":
+            letters(value, 0);
+            break;
+          case "subLetters":
+            letters(value, 20);
+            break;
+          case "mainNumbers":
+            numbers(value, 0);
+            break;
+          case "subNumbers":
+            numbers(value, 20);
             break;
         }
       });

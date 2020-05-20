@@ -1,8 +1,8 @@
 {
-  "urlRandomness": "jf-mue",
+  "urlRandomness": "fg-3yj",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "https": false
+  "https": true
 }

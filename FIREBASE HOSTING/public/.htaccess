@@ -1,0 +1,8 @@
+AuthType Shibboleth
+ShibCompatWith24 On
+
+ShibRequestSetting redirectToSSL 443
+
+ShibRequestSetting requireSession 1
+
+ShibRequestSetting entityID https://idp.jh.edu/idp/shibboleth

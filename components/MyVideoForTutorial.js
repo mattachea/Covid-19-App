@@ -53,7 +53,7 @@ function webVideo(props) {
   })
 
   return (
-    <View styles={styles.contentContainer}>
+    <View style={styles.contentContainer}>
       <div ref={(r) => { player = r }}></div>
     </View>
   );

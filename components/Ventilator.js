@@ -20,7 +20,7 @@ export default function Ventilator({route}) {
     Object.entries(data).map(([key, value]) => {
       switch (value.type) {
         case "image":
-          let uri = "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FQwikRefGuide%2F" + 
+          let uri = "https://firebasestorage.googleapis.com/v0/b/covid-19-ventilator-training.appspot.com/o/images%2FQwikRefGuide%2F" +
             value.content +
             "?alt=media&token=1cdcded1-d887-412e-b632-62a4dc92b3bc";
           componentsList.push(
@@ -46,12 +46,10 @@ export default function Ventilator({route}) {
   //source={{uri: ventPicSrc}} -->proper method of doing this but issues due to async
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>{name}</Text>
         </View>
         <View style={styles.contentContainer}>{createObjects()}</View>
-      </ScrollView>
     </View>
   );
 }
@@ -67,8 +65,8 @@ export default function Ventilator({route}) {
 //Styling
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
+    height:'100%'
   },
   titleContainer: {
     alignItems: "center",
@@ -88,8 +86,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   contentContainer: {
-    flex: 1,
     // margin: 3.5,
+    height: "100%",
   },
 });
-

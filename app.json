@@ -26,6 +26,9 @@
       "supportsTablet": true,
       "bundleIdentifier": "Covid-19-Reference"
     },
+    "android": {
+    "package": "com.jhu.Covid19Reference"
+  },
     "description": ""
   }
 }

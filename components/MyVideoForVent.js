@@ -2,6 +2,7 @@ import React, {useRef, useState} from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Platform } from "react-native";
 import YoutubePlayer from 'react-native-youtube-iframe';
 
+
 export default function MyVideo(props) {
   return Platform.OS == "web" ? webVideo(props) : appVideo(props);
 }
@@ -11,7 +12,6 @@ function appVideo(props) {
   const [playing, setPlaying] = useState(true);
 
   let timestamps = props.timestamps;
-
   function createButtonsApp() {
     let k = 0;
     let buttonList = new Array(Object.keys(timestamps).length);
@@ -35,8 +35,11 @@ function appVideo(props) {
   }
 
   return (
-    <View style={styles.contentContainer}>
-      <ScrollView>
+    <View style={{height:'100%', flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center',}}>
+        <View style={{height:300}}>
         <YoutubePlayer
           ref={playerRef}
           height={300}
@@ -54,11 +57,15 @@ function appVideo(props) {
             showClosedCaptions: true
           }}
         />
-        {createButtonsApp()}
-      </ScrollView>
     </View>
-  );
-}
+    <View style={{flex:0, height:300}}>
+      <ScrollView contentContainerStyle={{flex:0}} style={{height:350, width: 400,}}>
+             {createButtonsApp()}
+           </ScrollView>
+        </View>
+        </View>
+       );
+     }
 
 let loadYT;
 let player;
@@ -79,6 +86,7 @@ function webVideo(props) {
       videoId: props.video,
     })
   })
+
 
 
   let timestamps = props.timestamps;
@@ -114,34 +122,43 @@ function webVideo(props) {
   );
 }
 
+
 const styles = StyleSheet.create({
   contentContainer: {
-    flex: 1,
+    display: 'flex',
+    height: '100%',
     margin: 3.5,
     alignItems: 'center',
     alignSelf: 'center',
   },
   buttonStyle: {
-    flexDirection: 'row',
-    marginVertical: 8,
-    alignSelf: 'center',
-    alignItems:'center',
-    justifyContent:'flex-start',
-    width:300,
-    height:70,
-    backgroundColor: '#F2F2F2',
-    borderRadius:20,
-    shadowColor: 'rgba(0,0,0, .4)', // IOS
-    shadowOffset: { height: 1, width: 0 }, // IOS
-    shadowOpacity: 1, // IOS
-    shadowRadius: 1, //IOS
-    elevation: 1, // Android
-  },
+   flexDirection: 'row',
+   marginVertical: 8,
+   alignSelf: 'center',
+   alignItems:'center',
+   justifyContent:'flex-start',
+   width:275,
+   height:55,
+   backgroundColor: '#F2F2F2',
+   borderRadius:10,
+   shadowColor: 'rgba(0,0,0, .4)', // IOS
+   shadowOffset: { height: 1.2, width: 0 }, // IOS
+   shadowOpacity: 1, // IOS
+   shadowRadius: 1, //IOS
+   elevation: 1, // Android
+ },
   buttonText: {
     color: 'black',
     fontSize: 20,
-    //fontFamily: 'Avenir-roman',
-    paddingHorizontal: 10,
+    fontFamily: 'Avenir-roman',
+    paddingHorizontal: 20,
     //paddingTop: 10,
+  },
+  titleText: {
+    fontFamily: 'Avenir-roman',
+    textAlign: "center",
+    fontSize: 30,
+    },
+  scrollable: {
   },
 });

@@ -114,14 +114,17 @@ function webVideo(props) {
 
   return (
     <View style={styles.contentContainer}>
-      <ScrollView>
+      <div style={{position: 'fixed'}}>
         <div ref={(r) => { player = r }}></div>
+        <br/>
+        <Text style={styles.titleText}><u>Content Selection</u></Text>
+        </div>
+            <ScrollView style={{height:'40vh', width:500, top:340, bottom:0}}>
         {createButtonsWeb()}
       </ScrollView>
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   contentContainer: {

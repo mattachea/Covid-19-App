@@ -43,7 +43,7 @@ function appVideo(props) {
           width={400}
           videoId={props.video}
           play={playing}
-          onChangeState={event => console.log(event)}   
+          onChangeState={event => console.log(event)}
           onReady={() => console.log("ready")}
           onError={e => console.log(e)}
           onPlaybackQualityChange={q => console.log(q)}
@@ -80,7 +80,7 @@ function webVideo(props) {
     })
   })
 
-  
+
   let timestamps = props.timestamps;
   function createButtonsWeb() {
     let k = 0;
@@ -145,4 +145,3 @@ const styles = StyleSheet.create({
     //paddingTop: 10,
   },
 });
-

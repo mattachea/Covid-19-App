@@ -39,7 +39,7 @@ function appVideo(props) {
       <ScrollView>
         <YoutubePlayer
           ref={playerRef}
-          height={260}
+          height={300}
           width={400}
           videoId={props.video}
           play={playing}
@@ -60,10 +60,28 @@ function appVideo(props) {
   );
 }
 
+let loadYT;
+let player;
 function webVideo(props) {
-  let uri = "https://www.youtube.com/embed/" + props.video;
-  let timestamps = props.timestamps;
+  if (!loadYT) {
+    loadYT = new Promise((resolve) => {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      window.onYouTubeIframeAPIReady = () => resolve(window.YT);
+    })
+  }
+  loadYT.then((YT) => {
+    player = new YT.Player(player, {
+      height: 300,
+      width: 400,
+      videoId: props.video,
+    })
+  })
 
+  
+  let timestamps = props.timestamps;
   function createButtonsWeb() {
     let k = 0;
     let buttonList = new Array(Object.keys(timestamps).length);
@@ -77,7 +95,7 @@ function webVideo(props) {
           key={k++}
           style={styles.buttonStyle}
           onPress={() => {
-            playerRef.current.seekTo(timeStamp);
+            player.seekTo(timeStamp);
           }}
         >
           <Text style={styles.buttonText}>{buttonName}</Text>
@@ -86,21 +104,11 @@ function webVideo(props) {
     return buttonList;
   }
 
-  //{createButtonsWeb()}
-
   return (
     <View styles={styles.contentContainer}>
       <ScrollView>
-        <div style="margin:3.5;flex:1;alignItems:center;">
-          <iframe 
-            width="400" 
-            height="300" 
-            src={uri}
-            frameborder="0" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
+        <div ref={(r) => { player = r }}></div>
+        {createButtonsWeb()}
       </ScrollView>
     </View>
   );
@@ -111,6 +119,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 3.5,
     alignItems: 'center',
+    alignSelf: 'center',
   },
   buttonStyle: {
     flexDirection: 'row',
@@ -131,10 +140,9 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'black',
     fontSize: 20,
-    textAlign: 'center',
-    // fontFamily: 'Avenir-roman',
-    paddingHorizontal: 20,
-    paddingTop: 10,
+    //fontFamily: 'Avenir-roman',
+    paddingHorizontal: 10,
+    //paddingTop: 10,
   },
 });
 

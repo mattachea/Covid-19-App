@@ -32,29 +32,40 @@ function appVideo(props) {
   );
 }
 
+let loadYT;
+let player;
 function webVideo(props) {
-  let uri = "https://www.youtube.com/embed/" + props.video;
+  if (!loadYT) {
+    loadYT = new Promise((resolve) => {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      window.onYouTubeIframeAPIReady = () => resolve(window.YT);
+    })
+  }
+  loadYT.then((YT) => {
+    player = new YT.Player(player, {
+      height: 300,
+      width: 400,
+      videoId: props.video,
+    })
+  })
+
   return (
     <View styles={styles.contentContainer}>
-      <div style="align:center;">
-        <iframe
-          width="400" 
-          height="300" 
-          src={uri}
-          frameborder="0" 
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
+      <div ref={(r) => { player = r }}></div>
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     margin: 3.5,
-    alignItems: 'center'
+    alignItems: 'center',
+    alignSelf: 'center',
   },
 });
 

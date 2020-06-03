@@ -39,31 +39,30 @@ function appVideo(props) {
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'center',}}>
-        <View style={{height:300}}>
-        <YoutubePlayer
-          ref={playerRef}
-          height={300}
-          width={400}
-          videoId={props.video}
-          play={playing}
-          onChangeState={event => console.log(event)}
-          onReady={() => console.log("ready")}
-          onError={e => console.log(e)}
-          onPlaybackQualityChange={q => console.log(q)}
-          volume={50}
-          playbackRate={1}
-          playerParams={{
-            cc_lang_pref: "us",
-            showClosedCaptions: true
-          }}
-        />
+          <YoutubePlayer
+            ref={playerRef}
+            height={300}
+            width={400}
+            videoId={props.video}
+            play={playing}
+            onChangeState={event => console.log(event)}
+            onReady={() => console.log("ready")}
+            onError={e => console.log(e)}
+            onPlaybackQualityChange={q => console.log(q)}
+            volume={50}
+            playbackRate={1}
+            playerParams={{
+              cc_lang_pref: "us",
+              showClosedCaptions: true
+            }}
+          />
+        <View style={{flex:0, height:400}}>
+          <Text style={styles.titleText}>Content Selection</Text>
+          <ScrollView contentContainerStyle={{flex:0}} style={{height:350, width: 400,}}>
+            {createButtonsApp()}
+          </ScrollView>
+        </View>
     </View>
-    <View style={{flex:0, height:300}}>
-      <ScrollView contentContainerStyle={{flex:0}} style={{height:350, width: 400,}}>
-             {createButtonsApp()}
-           </ScrollView>
-        </View>
-        </View>
        );
      }
 
@@ -117,7 +116,7 @@ function webVideo(props) {
       <div style={{position: 'fixed'}}>
         <div ref={(r) => { player = r }}></div>
         <br/>
-        <Text style={styles.titleText}><u>Content Selection</u></Text>
+        <Text style={styles.titleText}>Content Selection</Text>
         </div>
             <ScrollView style={{height:'40vh', width:500, top:340, bottom:0}}>
         {createButtonsWeb()}
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir-roman',
     textAlign: "center",
     fontSize: 30,
-    },
+  },
   scrollable: {
   },
 });

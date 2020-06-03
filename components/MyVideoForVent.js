@@ -105,7 +105,7 @@ function webVideo(props) {
   }
 
   return (
-    <View styles={styles.contentContainer}>
+    <View style={styles.contentContainer}>
       <ScrollView>
         <div ref={(r) => { player = r }}></div>
         {createButtonsWeb()}
